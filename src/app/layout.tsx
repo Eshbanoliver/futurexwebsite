@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -12,12 +12,61 @@ const outfit = Outfit({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#602dee",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: "FutureX Digital Marketing | High-End SEO & Web Development Agency",
   description: "Accelerate your lead funnels. We specialize in custom web applications, video editing, SMM, technical SEO, and paid advertising. Book a free audit!",
-  metadataBase: new URL("https://futurexwebsite.com"), // Fallback domain
+  metadataBase: new URL("https://futurexdigitalmarketing.com"),
   alternates: {
     canonical: "/",
+  },
+  keywords: [
+    "FutureX Digital Marketing",
+    "FutureX Udaipur",
+    "Digital Marketing Udaipur",
+    "SEO Agency Udaipur",
+    "Web Development Company Udaipur",
+    "Video Editing Udaipur",
+    "Social Media Management Udaipur",
+    "Technical SEO Agency",
+    "PPC Campaigns Google Ads",
+    "Corporate Visual Branding",
+    "Paid Advertising Campaign Managers",
+    "UI UX App Development Agency"
+  ],
+  authors: [{ name: "FutureX Team", url: "https://futurexdigitalmarketing.com" }],
+  creator: "FutureX Digital Marketing",
+  publisher: "FutureX Digital Marketing",
+  openGraph: {
+    title: "FutureX Digital Marketing | High-End SEO & Web Development Agency",
+    description: "Accelerate your lead funnels. We specialize in custom web applications, video editing, SMM, technical SEO, and paid advertising. Book a free audit!",
+    url: "https://futurexdigitalmarketing.com",
+    siteName: "FutureX Digital Marketing",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FutureX Digital Marketing | High-End SEO & Web Development Agency",
+    description: "Accelerate your lead funnels. We specialize in custom web applications, video editing, SMM, technical SEO, and paid advertising. Book a free audit!",
+    creator: "@Futurex2330751",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
