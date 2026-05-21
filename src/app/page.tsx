@@ -189,47 +189,178 @@ export default function Home() {
         </section>
 
         {/* ABOUT US SNIPPET SECTION */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="text-sm font-bold uppercase tracking-wider text-primary">About FutureX</div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
-                Engineered to Convert. Designed to Stand Out.
-              </h2>
-              <p className="text-foreground/75 leading-relaxed">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
+          {/* Subtle abstract background paths */}
+          <div className="absolute top-[20%] right-[-10%] w-[35%] h-[35%] bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute bottom-[20%] left-[-10%] w-[35%] h-[35%] bg-accent-purple/5 rounded-full blur-[80px] pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Side: Animated Brand Message */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0, x: -40 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    staggerChildren: 0.12,
+                    duration: 0.7,
+                    ease: "easeOut"
+                  }
+                }
+              }}
+              className="space-y-6"
+            >
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="inline-flex items-center space-x-2 glass-pill px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-primary border border-primary/10"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>About FutureX</span>
+              </motion.div>
+
+              <motion.h2
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="text-3xl sm:text-4xl sm:text-5xl font-extrabold text-foreground leading-tight tracking-tight"
+              >
+                Engineered to Convert.{" "}
+                <span className="bg-gradient-to-r from-primary via-accent-purple to-primary bg-clip-text text-transparent">
+                  Designed to Stand Out.
+                </span>
+              </motion.h2>
+
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="text-foreground/80 leading-relaxed text-sm sm:text-base"
+              >
                 At FutureX Digital Marketing, we reject boring templates and standard corporate jargon. We combine robust React/Next.js technology frameworks with aesthetic design and data-backed ad content to scale companies globally.
-              </p>
-              <p className="text-foreground/75 leading-relaxed">
+              </motion.p>
+
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="text-foreground/80 leading-relaxed text-sm sm:text-base"
+              >
                 Whether you need high-speed website code, short-form reels that retain attention, or keyword architecture designed to dominate SEO in London, Dubai, or New York, we deliver transparency and growth.
-              </p>
-              <div className="pt-2">
-                <Link href="/about" className="glow-btn-secondary px-6 py-3 rounded-xl text-sm font-bold text-foreground flex items-center justify-center space-x-2 w-fit hover:no-underline">
+              </motion.p>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="pt-2"
+              >
+                <Link
+                  href="/about"
+                  className="glow-btn-secondary px-6 py-3 rounded-xl text-sm font-bold text-foreground flex items-center justify-center space-x-2 w-fit hover:no-underline group shadow-sm hover:shadow-md transition-all duration-300"
+                >
                   <span>Learn More About Us</span>
-                  <ArrowRight className="w-4 h-4 text-primary" />
+                  <ArrowRight className="w-4 h-4 text-primary transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
-              </div>
-            </div>
-            
-            <div className="liquid-glass p-8 rounded-3xl relative overflow-hidden flex flex-col justify-center space-y-6 border border-primary/10">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Award className="w-6 h-6 text-primary" />
+              </motion.div>
+            </motion.div>
+
+            {/* Right Side: Eye-Catchy Overlapping Layer Showcase */}
+            <div className="relative h-[420px] flex items-center justify-center md:px-8">
+              {/* Central neon blur background */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-primary/10 blur-[80px] animate-pulse pointer-events-none" />
+
+              {/* Card 1: Underlay Card (Premium Quality Standards) */}
+              <motion.div
+                initial={{ opacity: 0, x: 40, y: 40, rotate: 3 }}
+                whileInView={{ opacity: 1, x: -30, y: -45, rotate: -4 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -52, scale: 1.03, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
+                className="absolute w-72 p-6 rounded-2xl border border-primary/10 bg-white/70 backdrop-blur-xl shadow-lg flex flex-col justify-between cursor-pointer"
+              >
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Award className="w-5.5 h-5.5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-foreground text-[14px] font-bold tracking-tight">Premium Standards</h4>
+                    <p className="text-foreground/60 text-[11px] mt-0.5">E-E-A-T validated codebases.</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-foreground font-bold">Premium Quality Standards</h4>
-                  <p className="text-foreground/60 text-xs mt-1">E-E-A-T validated frameworks and codebases.</p>
+                <div className="mt-5 pt-4 border-t border-primary/5 flex items-center justify-between">
+                  <span className="text-[9px] text-foreground/40 font-bold uppercase tracking-wider">
+                    Next.js / React 16
+                  </span>
+                  <span className="text-[9px] font-extrabold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100/50">
+                    Enterprise
+                  </span>
                 </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Users className="w-6 h-6 text-primary" />
+              </motion.div>
+
+              {/* Card 2: Overlay Card (Global Agency Expertise) */}
+              <motion.div
+                initial={{ opacity: 0, x: -40, y: -40, rotate: -3 }}
+                whileInView={{ opacity: 1, x: 20, y: 45, rotate: 4 }}
+                viewport={{ once: true }}
+                whileHover={{ y: 38, scale: 1.03, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.8, delay: 0.1, type: "spring", stiffness: 60 }}
+                className="absolute w-72 p-6 rounded-2xl border border-accent-purple/15 bg-white/80 backdrop-blur-xl shadow-xl flex flex-col justify-between cursor-pointer z-10"
+              >
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center shrink-0">
+                    <Users className="w-5.5 h-5.5 text-accent-purple" />
+                  </div>
+                  <div>
+                    <h4 className="text-foreground text-[14px] font-bold tracking-tight">Global Expertise</h4>
+                    <p className="text-foreground/60 text-[11px] mt-0.5">UK, US, Dubai & Local sectors.</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-foreground font-bold">Global Agency Expertise</h4>
-                  <p className="text-foreground/60 text-xs mt-1">Campaign managers representing UK, US, & Dubai experience.</p>
+                <div className="mt-5 pt-4 border-t border-primary/5 flex items-center justify-between">
+                  <span className="text-[9px] text-foreground/40 font-bold uppercase tracking-wider">
+                    Conversion Rate Optimization
+                  </span>
+                  <span className="text-[9px] font-extrabold text-primary bg-primary/5 px-2 py-0.5 rounded-full border border-primary/10">
+                    +380% ROAS
+                  </span>
                 </div>
-              </div>
+              </motion.div>
+
+              {/* Floating Element 1: Custom Pulse Pill */}
+              <motion.div
+                initial={{ scale: 0.7, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-8 right-6 bg-gradient-to-r from-primary to-accent-purple text-white px-3.5 py-2 rounded-full text-[10px] sm:text-xs font-bold shadow-[0_10px_25px_rgba(96,45,238,0.25)] z-20 flex items-center space-x-2"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                <span>100% Bespoke Code</span>
+              </motion.div>
+
+              {/* Floating Element 2: Performance Core Metric */}
+              <motion.div
+                initial={{ scale: 0.7, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                className="absolute bottom-8 left-6 bg-white border border-primary/15 text-foreground px-3.5 py-2 rounded-full text-[10px] sm:text-xs font-bold shadow-md z-20 flex items-center space-x-2"
+              >
+                <span className="text-emerald-500 font-extrabold">99/100</span>
+                <span className="text-foreground/50 text-[10px] font-semibold">Lighthouse Score</span>
+              </motion.div>
             </div>
           </div>
         </section>
