@@ -17,6 +17,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  colorScheme: "only light",
 };
 
 export const metadata: Metadata = {
@@ -76,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
+    <html lang="en" className={`${outfit.variable} scroll-smooth`} style={{ colorScheme: "only light" }}>
       <head>
         {/* Preconnect for Google Fonts to maximize LCP scores */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
