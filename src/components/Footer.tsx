@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = 2025; // Explicitly matching requested "© 2025" string
   
   return (
-    <footer className="relative bg-secondary/80 backdrop-blur-md border-t border-primary/10 pt-16 pb-8 overflow-hidden">
+    <footer className="relative bg-[#120c1e] border-t border-primary/20 pt-16 pb-8 overflow-hidden text-white/80">
       {/* Decorative Neon Glows */}
       <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-primary/5 blur-[80px]" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-accent-purple/5 blur-[80px]" />
@@ -21,7 +21,7 @@ export default function Footer() {
                 FUTURE<span className="text-primary font-black">X</span>
               </span>
             </Link>
-            <p className="text-foreground/70 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               We specialize in custom web architectures, visual branding, creative assets, and performance-based marketing. Accelerate your pipeline in London, US, AUS, Dubai, and Udaipur.
             </p>
             <div className="flex items-center space-x-4">
@@ -79,19 +79,19 @@ export default function Footer() {
             <h4 className="text-white text-sm font-bold uppercase tracking-wider">Company Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-foreground/75 hover:text-primary text-sm transition-colors">Home</Link>
+                <Link href="/" className="text-white/70 hover:text-primary text-sm transition-colors">Home</Link>
               </li>
               <li>
-                <Link href="/about" className="text-foreground/75 hover:text-primary text-sm transition-colors">About Us</Link>
+                <Link href="/about" className="text-white/70 hover:text-primary text-sm transition-colors">About Us</Link>
               </li>
               <li>
-                <Link href="/services" className="text-foreground/75 hover:text-primary text-sm transition-colors">Services Directory</Link>
+                <Link href="/services" className="text-white/70 hover:text-primary text-sm transition-colors">Services Directory</Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-foreground/75 hover:text-primary text-sm transition-colors">Client Testimonials</Link>
+                <Link href="/testimonials" className="text-white/70 hover:text-primary text-sm transition-colors">Client Testimonials</Link>
               </li>
               <li>
-                <Link href="/contact" className="text-foreground/75 hover:text-primary text-sm transition-colors">Contact Us</Link>
+                <Link href="/contact" className="text-white/70 hover:text-primary text-sm transition-colors">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -104,7 +104,7 @@ export default function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-foreground/75 hover:text-primary text-sm transition-colors"
+                    className="text-white/70 hover:text-primary text-sm transition-colors"
                   >
                     {service.name}
                   </Link>
@@ -124,13 +124,13 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-foreground/75 leading-relaxed">
+                <span className="text-white/70 leading-relaxed">
                   5th Floor Office No. 526, Arvana Mall Hathipole, Udaipur, Rajasthan - 313001
                 </span>
               </li>
               <li className="flex items-center space-x-3 text-sm">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href="tel:+917733977227" className="text-foreground/75 hover:text-primary transition-colors">
+                <a href="tel:+917733977227" className="text-white/70 hover:text-primary transition-colors">
                   +91 77339 77227
                 </a>
               </li>
@@ -138,7 +138,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <a
                   href="mailto:futurexdigitalmarketing@gmail.com"
-                  className="text-foreground/75 hover:text-primary transition-colors break-all"
+                  className="text-white/70 hover:text-primary transition-colors break-all"
                 >
                   futurexdigitalmarketing@gmail.com
                 </a>
@@ -148,11 +148,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-foreground/50 text-xs text-center md:text-left">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/50 text-xs text-center md:text-left">
             © {currentYear} FutureX Digital Marketing. All rights reserved.
           </p>
-          <div className="flex space-x-6 text-xs text-foreground/50">
+          <div className="flex space-x-6 text-xs text-white/50">
             <Link href="/contact" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="/contact" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
