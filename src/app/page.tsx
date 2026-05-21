@@ -160,6 +160,44 @@ export default function Home() {
     }))
   };
 
+  const strategicBenefits = [
+    {
+      text: "Optimized metadata tailored for London, Dubai, Udaipur, US, and Aus.",
+      icon: Globe,
+      colorClass: "bg-teal-50 text-teal-600 border-teal-200/50 dark:bg-teal-500/10 dark:text-teal-400 dark:border-teal-500/20",
+      hoverBorder: "hover:!border-teal-500/50 hover:bg-teal-50/10",
+      glowColor: "group-hover:shadow-[0_0_15px_rgba(13,148,136,0.15)]",
+    },
+    {
+      text: "Zero boilerplate code configurations—maximizing Core Web Vitals LCP/CLS.",
+      icon: Zap,
+      colorClass: "bg-purple-50 text-purple-600 border-purple-200/50 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-500/20",
+      hoverBorder: "hover:!border-purple-500/50 hover:bg-purple-50/10",
+      glowColor: "group-hover:shadow-[0_0_15px_rgba(168,85,247,0.15)]",
+    },
+    {
+      text: "24/7 communications with full access to Slack workspaces.",
+      icon: Users,
+      colorClass: "bg-pink-50 text-pink-600 border-pink-200/50 dark:bg-pink-500/10 dark:text-pink-400 dark:border-pink-500/20",
+      hoverBorder: "hover:!border-pink-500/50 hover:bg-pink-50/10",
+      glowColor: "group-hover:shadow-[0_0_15px_rgba(236,72,153,0.15)]",
+    },
+    {
+      text: "Detailed Google Maps and local business listings structures.",
+      icon: Target,
+      colorClass: "bg-amber-50 text-amber-600 border-amber-200/50 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20",
+      hoverBorder: "hover:!border-amber-500/50 hover:bg-amber-50/10",
+      glowColor: "group-hover:shadow-[0_0_15px_rgba(245,158,11,0.15)]",
+    },
+    {
+      text: "Dedicated creative directors for video color grading and formatting.",
+      icon: Sparkles,
+      colorClass: "bg-emerald-50 text-emerald-600 border-emerald-200/50 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20",
+      hoverBorder: "hover:!border-emerald-500/50 hover:bg-emerald-50/10",
+      glowColor: "group-hover:shadow-[0_0_15px_rgba(16,185,129,0.15)]",
+    }
+  ];
+
   return (
     <>
       {/* SEO Schema Injection */}
@@ -571,45 +609,96 @@ export default function Home() {
         </section>
 
         {/* WHY CHOOSE US */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="text-sm font-bold uppercase tracking-wider text-primary">Strategic Advantage</div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">Why Modern Brands Choose FutureX</h2>
-              <p className="text-foreground/75 leading-relaxed">
-                Traditional digital agencies operate like black boxes, hiding behind complex spreadsheets. FutureX was founded by web engineers who understand how algorithms read website performance, and writers who understand conversion hooks.
-              </p>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className="inline-flex items-center space-x-2 bg-primary/5 border border-primary/10 px-4.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-primary">
+                  <span>Strategic Advantage</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight tracking-tight">
+                  Why Modern Brands Choose FutureX
+                </h2>
+                <p className="text-foreground/75 text-base sm:text-lg leading-relaxed">
+                  Traditional digital agencies operate like black boxes, hiding behind complex spreadsheets. FutureX was founded by web engineers who understand how algorithms read website performance, and writers who understand conversion hooks.
+                </p>
+              </div>
               
-              <ul className="space-y-3.5 pt-2">
-                {[
-                  "Optimized metadata tailored for London, Dubai, Udaipur, US, and Aus.",
-                  "Zero boilerplate code configurations—maximizing Core Web Vitals LCP/CLS.",
-                  "24/7 communications with full access to Slack workspaces.",
-                  "Detailed Google Maps and local business listings structures.",
-                  "Dedicated creative directors for video color grading and formatting."
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start space-x-3 text-sm text-foreground/80">
-                    <CheckCircle className="w-4 h-4 text-[#25D366] shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
+              <div className="space-y-2.5 pt-2">
+                {strategicBenefits.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    className={`group flex items-start space-x-4 p-3.5 rounded-2xl border border-transparent ${item.hoverBorder} transition-all duration-300 cursor-default`}
+                  >
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border shrink-0 transition-all duration-300 ${item.colorClass} ${item.glowColor} mt-0.5 shadow-sm`}>
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm font-semibold text-foreground/85 group-hover:text-foreground transition-colors duration-300 leading-relaxed pt-0.5">
+                      {item.text}
+                    </span>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div className="relative flex justify-center items-center">
+              {/* Vibrant backgrounds & glows */}
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-primary/10 via-accent-purple/5 to-transparent blur-3xl opacity-70 pointer-events-none" />
               <div className="absolute w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-              <div className="liquid-glass p-8 rounded-2xl max-w-md w-full relative z-10 border border-primary/10 space-y-6">
-                <h4 className="text-foreground font-bold text-center border-b border-primary/10 pb-4">
-                  Target SEO Regions Ranked
-                </h4>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="liquid-glass p-8 rounded-[2rem] max-w-md w-full relative z-10 !border-primary/10 space-y-6 shadow-xl"
+              >
+                {/* Header with Live Ping */}
+                <div className="flex items-center justify-between border-b border-primary/10 pb-4">
+                  <h4 className="text-foreground font-extrabold text-sm uppercase tracking-wider">
+                    Target SEO Regions
+                  </h4>
+                  <span className="flex items-center space-x-1.5 bg-emerald-500/10 text-emerald-600 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                    <span>Live Indexing</span>
+                  </span>
+                </div>
+
+                {/* Grid of Regions */}
                 <div className="grid grid-cols-2 gap-4 text-center">
-                  {["United States", "United Kingdom", "Australia", "UAE (Dubai)", "London Focus", "Udaipur Local"].map((loc, idx) => (
-                    <div key={idx} className="bg-primary/5 border border-primary/10 rounded-lg p-2.5 text-xs text-foreground/80 font-semibold">
-                      {loc}
-                    </div>
+                  {[
+                    { name: "United States", gradient: "from-[#3b82f6] to-[#1d4ed8]", shadow: "shadow-[0_4px_12px_rgba(59,130,246,0.25)]", tag: "US" },
+                    { name: "United Kingdom", gradient: "from-[#ef4444] to-[#b91c1c]", shadow: "shadow-[0_4px_12px_rgba(239,68,68,0.25)]", tag: "UK" },
+                    { name: "Australia", gradient: "from-[#10b981] to-[#047857]", shadow: "shadow-[0_4px_12px_rgba(16,185,129,0.25)]", tag: "AU" },
+                    { name: "UAE (Dubai)", gradient: "from-[#f59e0b] to-[#c2410c]", shadow: "shadow-[0_4px_12px_rgba(245,158,11,0.25)]", tag: "UAE" },
+                    { name: "London Focus", gradient: "from-[#a855f7] to-[#701a75]", shadow: "shadow-[0_4px_12px_rgba(168,85,247,0.25)]", tag: "LDN" },
+                    { name: "Udaipur Local", gradient: "from-[#06b6d4] to-[#0891b2]", shadow: "shadow-[0_4px_12px_rgba(6,182,212,0.25)]", tag: "UDR" }
+                  ].map((loc, idx) => (
+                    <motion.div
+                      key={idx}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                      className={`bg-gradient-to-r ${loc.gradient} ${loc.shadow} text-white rounded-2xl p-3.5 text-xs font-bold cursor-pointer relative overflow-hidden group/pill flex flex-col justify-center items-center min-h-[64px]`}
+                    >
+                      {/* Inner overlay shapes */}
+                      <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none rounded-2xl">
+                        <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-white" />
+                      </div>
+                      <span className="text-[10px] text-white/80 font-extrabold uppercase tracking-wider mb-0.5">
+                        {loc.tag}
+                      </span>
+                      <span className="tracking-tight text-white">
+                        {loc.name}
+                      </span>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
