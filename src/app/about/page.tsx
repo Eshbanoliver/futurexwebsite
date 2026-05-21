@@ -273,15 +273,29 @@ export default function About() {
           </div>
 
           {/* Focus Regions Map Section */}
-          <div className="bg-secondary/35 rounded-3xl border border-primary/10 p-8 md:p-12 space-y-6 text-center">
-            <h2 className="text-2xl font-bold">Serving Global and Regional Markets</h2>
-            <p className="text-foreground/75 max-w-2xl mx-auto text-sm">
+          <div className="relative rounded-3xl border border-primary/15 p-8 md:p-12 space-y-6 text-center bg-white/60 backdrop-blur-xl shadow-lg overflow-hidden group">
+            {/* Ambient background glows */}
+            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute -left-20 -top-20 w-64 h-64 bg-accent-cyan/5 rounded-full blur-[80px] pointer-events-none" />
+
+            <h2 className="text-2xl font-extrabold tracking-tight text-foreground font-serif relative z-10">Serving Global and Regional Markets</h2>
+            <p className="text-foreground/75 max-w-2xl mx-auto text-sm relative z-10">
               We leverage data centers and localized optimization to scale businesses in international search engines. Our main target regions include:
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-4">
-              {["United States Focus", "United Kingdom (London)", "Australia Focus", "UAE (Dubai/Abu Dhabi)", "India (Udaipur Local)", "Canada Market", "Singapore Focus", "Europe Core"].map((region, i) => (
-                <div key={i} className="liquid-glass py-2.5 px-2 sm:py-3.5 sm:px-4 rounded-xl border border-primary/10 text-[11px] sm:text-xs md:text-sm font-semibold text-center flex items-center justify-center min-h-[50px]">
-                  {region}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-4 relative z-10">
+              {[
+                { name: "United States Focus", color: "bg-blue-50/70 border-blue-300/40 text-blue-700 hover:border-blue-500 hover:bg-blue-50/90", tag: "US" },
+                { name: "United Kingdom (London)", color: "bg-red-50/70 border-red-300/40 text-red-700 hover:border-red-500 hover:bg-red-50/90", tag: "UK" },
+                { name: "Australia Focus", color: "bg-emerald-50/70 border-emerald-300/40 text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50/90", tag: "AU" },
+                { name: "UAE (Dubai/Abu Dhabi)", color: "bg-amber-50/70 border-amber-300/40 text-amber-700 hover:border-amber-500 hover:bg-amber-50/90", tag: "UAE" },
+                { name: "India (Udaipur Local)", color: "bg-cyan-50/70 border-cyan-300/40 text-cyan-700 hover:border-cyan-500 hover:bg-cyan-50/90", tag: "IN" },
+                { name: "Canada Market", color: "bg-rose-50/70 border-rose-300/40 text-rose-700 hover:border-rose-500 hover:bg-rose-50/90", tag: "CA" },
+                { name: "Singapore Focus", color: "bg-purple-50/70 border-purple-300/40 text-purple-700 hover:border-purple-500 hover:bg-purple-50/90", tag: "SG" },
+                { name: "Europe Core", color: "bg-indigo-50/70 border-indigo-300/40 text-indigo-700 hover:border-indigo-500 hover:bg-indigo-50/90", tag: "EU" }
+              ].map((region, i) => (
+                <div key={i} className={`backdrop-blur-md py-3 px-3 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md text-[11px] sm:text-xs md:text-sm font-bold text-center flex flex-col items-center justify-center min-h-[64px] ${region.color}`}>
+                  <span className="text-[9px] uppercase tracking-wider opacity-70 mb-0.5">{region.tag}</span>
+                  <span>{region.name}</span>
                 </div>
               ))}
             </div>
