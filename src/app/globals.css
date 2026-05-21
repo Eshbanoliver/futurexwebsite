@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #120c1e;
+  --foreground: #f3f0f7;
+  
+  --primary: #602dee;
+  --primary-hover: #7b4bfb;
+  --secondary: #1e1729;
+  
+  --glass-bg: rgba(30, 23, 41, 0.45);
+  --glass-border: rgba(96, 45, 238, 0.15);
+  --glass-border-hover: rgba(96, 45, 238, 0.35);
+  --glass-glow: rgba(96, 45, 238, 0.12);
+  
+  --accent-purple: #c084fc;
+  --accent-cyan: #22d3ee;
+  
+  --font-outfit: 'Outfit', sans-serif;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-hover: var(--glass-border-hover);
+  --color-glass-glow: var(--glass-glow);
+  
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-cyan: var(--accent-cyan);
+  
+  --font-outfit: var(--font-outfit);
+  
+  --animate-neon-pulse: neon-pulse 4s ease-in-out infinite alternate;
+  --animate-float: float-up 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes neon-pulse {
+    from {
+      box-shadow: 0 0 15px rgba(96, 45, 238, 0.15), 0 0 5px rgba(96, 45, 238, 0.05);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(96, 45, 238, 0.4), 0 0 15px rgba(96, 45, 238, 0.15);
+    }
+  }
+  @keyframes float-up {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
   }
 }
 
+/* Custom Core Elements */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #120c1e;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(96, 45, 238, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 45, 238, 0.6);
+}
+
+/* Liquid Glass Utilities */
+.liquid-glass {
+  background: rgba(30, 23, 41, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(96, 45, 238, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.liquid-glass-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.liquid-glass-hover:hover {
+  border-color: rgba(96, 45, 238, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(96, 45, 238, 0.2), 0 0 15px rgba(96, 45, 238, 0.15) inset;
+  transform: translateY(-3px);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  font-size: 16px; /* Safeguard iOS zoom */
+}
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(96, 45, 238, 0.6);
+  box-shadow: 0 0 15px rgba(96, 45, 238, 0.2);
+  outline: none;
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(96, 45, 238, 0.6);
+}
+
+.glow-btn-primary {
+  background: linear-gradient(135deg, #602dee 0%, #8b5cf6 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(96, 45, 238, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-btn-primary:hover {
+  box-shadow: 0 4px 25px rgba(96, 45, 238, 0.7), 0 0 10px rgba(255, 255, 255, 0.25) inset;
+  transform: translateY(-2px);
+}
+
+.glow-btn-secondary {
+  background: rgba(30, 23, 41, 0.45);
+  border: 1px solid rgba(96, 45, 238, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-btn-secondary:hover {
+  background: rgba(96, 45, 238, 0.1);
+  border-color: rgba(96, 45, 238, 0.6);
+  box-shadow: 0 0 15px rgba(96, 45, 238, 0.2);
+  transform: translateY(-2px);
+}
+

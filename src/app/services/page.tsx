@@ -1,0 +1,108 @@
+import React from "react";
+import Link from "next/link";
+import { ArrowRight, Sparkles, CheckCircle } from "lucide-react";
+import { servicesData } from "@/data/services";
+import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
+
+export const metadata = {
+  title: "Our Services Directory | FutureX Digital Marketing",
+  description: "Browse our 12 expert digital marketing services including Web Development, SEO, Meta Ads, Video Editing, Google Ads, SMM, and Graphic Design. Let's scale!",
+};
+
+export default function Services() {
+  return (
+    <>
+      <JsonLd schema={localBusinessSchema} />
+
+      <main className="relative min-h-screen pt-32 pb-20 bg-background text-white overflow-hidden">
+        {/* Glowing background highlights */}
+        <div className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[20%] left-[-10%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+          {/* Header */}
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <div className="text-sm font-bold uppercase tracking-wider text-primary">Capabilities</div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-foreground to-primary-hover bg-clip-text text-transparent">
+              High-End Growth Services Built For Speed & Revenue
+            </h1>
+            <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">
+              We provide 12 specialized services designed to work together, accelerating your marketing pipeline across global hubs in London, New York, Dubai, Sydney, and local sectors.
+            </p>
+          </div>
+
+          {/* 12 Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.values(servicesData).map((svc) => (
+              <div
+                key={svc.slug}
+                className="liquid-glass p-6 md:p-8 rounded-2xl border border-primary/10 flex flex-col justify-between hover:border-primary/40 hover:shadow-[0_8px_32px_0_rgba(96,45,238,0.15)] transition-all duration-300 group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                      {svc.name === "Search Engine Optimization (SEO)" ? "SEO Focus" : "Premium"}
+                    </span>
+                    <span className="text-[11px] text-foreground/50 font-semibold tracking-wider uppercase">
+                      Target: {svc.locationFocus.split(",")[0]} & More
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                    {svc.name}
+                  </h3>
+
+                  <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed">
+                    {svc.metaDescription.substring(0, 110)}...
+                  </p>
+
+                  <div className="space-y-1.5 pt-2">
+                    <div className="text-xs font-bold text-white/95 uppercase tracking-wider">Key Features:</div>
+                    <ul className="space-y-1">
+                      {svc.keyPoints.slice(0, 2).map((pt, i) => (
+                        <li key={i} className="flex items-start space-x-2 text-[12px] text-foreground/60">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#25D366] shrink-0 mt-0.5" />
+                          <span className="line-clamp-1">{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-white/5 mt-6 flex items-center justify-between">
+                  <span className="text-[11px] text-foreground/40 font-bold uppercase tracking-wider">
+                    Ready-To-Rank
+                  </span>
+                  <Link
+                    href={`/services/${svc.slug}`}
+                    className="text-sm font-bold text-primary flex items-center space-x-1.5 hover:underline"
+                  >
+                    <span>Analyze Service</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Above Footer Audit Promo */}
+          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/30 shadow-[0_0_30px_rgba(96,45,238,0.1)] max-w-4xl mx-auto">
+            <div className="inline-flex items-center space-x-2 glass-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-primary">
+              <Sparkles className="w-4 h-4" />
+              <span>Complimentary Audit Session</span>
+            </div>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white">Let Us Audit Your Search and Ad Funnels</h2>
+            <p className="text-foreground/70 max-w-lg mx-auto text-sm leading-relaxed">
+              We'll pinpoint exactly why your website might be losing speed marks or ranking positions. We'll present the audit results in a customized document.
+            </p>
+            <div className="pt-2">
+              <Link href="/contact" className="glow-btn-primary px-8 py-4 rounded-xl text-base font-bold text-white inline-block">
+                Claim My Free Audit (Value $499)
+              </Link>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
