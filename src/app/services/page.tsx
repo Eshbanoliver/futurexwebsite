@@ -10,6 +10,21 @@ export const metadata = {
 };
 
 export default function Services() {
+  const vibrantBlobs = [
+    "from-[#ef4444] to-[#f97316] shadow-[0_0_20px_rgba(239,68,68,0.3)]",
+    "from-[#3b82f6] to-[#06b6d4] shadow-[0_0_20px_rgba(59,130,246,0.3)]",
+    "from-[#10b981] to-[#14b8a6] shadow-[0_0_20px_rgba(16,185,129,0.3)]",
+    "from-[#ec4899] to-[#8b5cf6] shadow-[0_0_20px_rgba(236,72,153,0.3)]",
+    "from-[#f59e0b] to-[#eab308] shadow-[0_0_20px_rgba(245,158,11,0.3)]",
+    "from-[#8b5cf6] to-[#6366f1] shadow-[0_0_20px_rgba(139,92,246,0.3)]",
+    "from-[#06b6d4] to-[#10b981] shadow-[0_0_20px_rgba(6,182,212,0.3)]",
+    "from-[#f43f5e] to-[#ec4899] shadow-[0_0_20px_rgba(244,63,94,0.3)]",
+    "from-[#6366f1] to-[#3b82f6] shadow-[0_0_20px_rgba(99,102,241,0.3)]",
+    "from-[#f97316] to-[#f59e0b] shadow-[0_0_20px_rgba(249,115,22,0.3)]",
+    "from-[#a855f7] to-[#d946ef] shadow-[0_0_20px_rgba(168,85,247,0.3)]",
+    "from-[#14b8a6] to-[#3b82f6] shadow-[0_0_20px_rgba(20,184,166,0.3)]",
+  ];
+
   return (
     <>
       <JsonLd schema={localBusinessSchema} />
@@ -33,12 +48,19 @@ export default function Services() {
 
           {/* 12 Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.values(servicesData).map((svc) => (
+            {Object.values(servicesData).map((svc, idx) => (
               <div
                 key={svc.slug}
-                className="liquid-glass p-6 md:p-8 rounded-2xl border border-primary/10 flex flex-col justify-between hover:border-primary/40 hover:shadow-[0_8px_32px_0_rgba(96,45,238,0.08)] transition-all duration-300 group"
+                className="liquid-glass p-6 md:p-8 rounded-2xl border border-primary/10 flex flex-col justify-between hover:border-primary/40 hover:shadow-[0_8px_32px_0_rgba(96,45,238,0.08)] transition-all duration-300 group relative overflow-hidden"
               >
-                <div className="space-y-4">
+                {/* Vibrant color blob at bottom-left corner */}
+                <div
+                  className={`absolute bottom-[-16px] left-[-16px] w-14 h-14 rounded-full bg-gradient-to-br ${
+                    vibrantBlobs[idx % vibrantBlobs.length]
+                  } blur-[12px] opacity-40 group-hover:opacity-75 group-hover:scale-125 transition-all duration-500 pointer-events-none z-0`}
+                />
+
+                <div className="space-y-4 relative z-10">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                       {svc.name === "Search Engine Optimization (SEO)" ? "SEO Focus" : "Premium"}
@@ -69,7 +91,7 @@ export default function Services() {
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-primary/10 mt-6 flex items-center justify-between">
+                <div className="pt-6 border-t border-primary/10 mt-6 flex items-center justify-between relative z-10">
                   <span className="text-[11px] text-foreground/40 font-bold uppercase tracking-wider">
                     Ready-To-Rank
                   </span>
