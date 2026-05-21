@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Star, MessageSquare, ArrowRight, ShieldCheck } from "lucide-react";
+import { Star, MessageSquare, ArrowRight, ShieldCheck, Flame, Cpu, BarChart } from "lucide-react";
 import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
 
 export const metadata = {
@@ -63,7 +63,7 @@ export default function Testimonials() {
         <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[10%] right-[-10%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="text-sm font-bold uppercase tracking-wider text-primary">Reviews</div>
@@ -110,6 +110,70 @@ export default function Testimonials() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Detailed SEO Case Studies Section */}
+          <div className="space-y-10 pt-8">
+            <div className="text-center space-y-4 max-w-2xl mx-auto">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">In-Depth Case Studies</div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">How We Deliver Measurable Outcomes</h2>
+              <p className="text-foreground/75 text-sm sm:text-base leading-relaxed">
+                Review the detailed strategic frameworks and technical executions behind our most successful campaigns.
+              </p>
+            </div>
+
+            <div className="space-y-8 max-w-5xl mx-auto">
+              {/* Case Study 1 */}
+              <div className="liquid-glass p-8 rounded-3xl border border-primary/10 flex flex-col md:flex-row gap-8 items-start relative overflow-hidden group hover:border-primary/30 transition-all duration-300">
+                <div className="shrink-0 w-12 h-12 rounded-2xl bg-red-50 border border-red-200/50 flex items-center justify-center text-red-600">
+                  <Flame className="w-6 h-6" />
+                </div>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-red-50 border border-red-200 text-red-600">Meta Ads Strategy</span>
+                    <span className="text-xs text-foreground/50 font-semibold">Client: Bloom Botanicals (US)</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">4.2x ROAS Scaling E-Commerce Storefronts</h3>
+                  <p className="text-foreground/75 text-sm leading-relaxed">
+                    Prior to partnering with FutureX, Bloom Botanicals faced high customer acquisition costs (CAC) and rising ad spend waste due to inaccurate pixel attribution. Our campaign specialists initiated a technical server-side Conversions API integration to restore signal data. Next, we ran a creative assets sprint: replacing flat image banners with fast-paced, high-hook UGC video reels compiled by our video editing desk. Within 30 days, click-through rates (CTR) rose by 64%, leading to a stable 4.2x Return on Ad Spend (ROAS) and over $45k in monthly ad revenue scale.
+                  </p>
+                </div>
+              </div>
+
+              {/* Case Study 2 */}
+              <div className="liquid-glass p-8 rounded-3xl border border-primary/10 flex flex-col md:flex-row gap-8 items-start relative overflow-hidden group hover:border-primary/30 transition-all duration-300">
+                <div className="shrink-0 w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200/50 flex items-center justify-center text-blue-600">
+                  <Cpu className="w-6 h-6" />
+                </div>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-blue-50 border border-blue-200 text-blue-600">Next.js Development</span>
+                    <span className="text-xs text-foreground/50 font-semibold">Client: Zenith Property UK (London)</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">98/100 Core Web Vitals Next.js Refactoring</h3>
+                  <p className="text-foreground/75 text-sm leading-relaxed">
+                    Zenith Property’s legacy WordPress site suffered from severe layouts shifts, slow hosting times, and a 4.5-second load speed, resulting in high organic drop-offs in the London market. FutureX redesigned the site using modern Next.js 15, headless layouts, and pure tailwind styling. We optimized metadata headers, dynamically rendered property grids at the edge, and configured asset compression pipelines. The results were immediate: page load time dropped to 0.7 seconds, bounce rates fell by 45%, and target local real estate keywords climbed to the first page of Google.
+                  </p>
+                </div>
+              </div>
+
+              {/* Case Study 3 */}
+              <div className="liquid-glass p-8 rounded-3xl border border-primary/10 flex flex-col md:flex-row gap-8 items-start relative overflow-hidden group hover:border-primary/30 transition-all duration-300">
+                <div className="shrink-0 w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200/50 flex items-center justify-center text-emerald-600">
+                  <BarChart className="w-6 h-6" />
+                </div>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-emerald-50 border border-emerald-200 text-emerald-600">Local SEO</span>
+                    <span className="text-xs text-foreground/50 font-semibold">Client: Mewar Heritage Stays (Udaipur)</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">+180% Organic Footfalls via Hyper-Local Search</h3>
+                  <p className="text-foreground/75 text-sm leading-relaxed">
+                    Mewar Heritage Stays wanted to capture physical hotel bookings from tourists searching Udaipur-centric travel keywords. FutureX executed a local SEO campaign: optimizing the Google Business Profile, correcting citation directories, and publishing keyword-focused travel guides. By implementing semantic schema markups, we enabled Udaipur local business rich snippet results in search queries. Within 90 days, organic calls and directional search clicks grew by 180% during peak tourism season.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* CTA Box */}

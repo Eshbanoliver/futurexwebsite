@@ -144,6 +144,46 @@ export default async function ServicePage({ params }: PageProps) {
                 </div>
               </div>
 
+              {/* Campaign Lifecycle Roadmap */}
+              <div className="space-y-6 pt-6 border-t border-primary/10">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+                  Our Strategic Campaign Lifecycle for {service.name}
+                </h2>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  To guarantee long-term results and positive Return on Ad Spend (ROAS), our team implements a structured 4-phase optimization framework specifically tailored for {service.name}. Here is how we build, optimize, and scale your campaign:
+                </p>
+                <div className="relative border-l-2 border-primary/10 ml-4 pl-6 space-y-6">
+                  <div className="relative">
+                    <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[10px] text-white font-bold">1</span>
+                    <h4 className="font-bold text-foreground text-sm">Phase 1: Discovery & Technical Audit</h4>
+                    <p className="text-foreground/75 text-xs leading-relaxed mt-1">
+                      We start by scanning your current website architecture, analyzing organic search keywords visibility, and checking active event tags or ad conversions. This establishes a baseline of your speed score, page layouts, and competitor ranks.
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[10px] text-white font-bold">2</span>
+                    <h4 className="font-bold text-foreground text-sm">Phase 2: Semantic Design & Funnel Mapping</h4>
+                    <p className="text-foreground/75 text-xs leading-relaxed mt-1">
+                      Our React engineers and copywriting specialists craft custom, high-converting layouts and landing pages matching the specific intent of your target regions ({service.locationFocus}). We embed schema markup protocols to ensure crawl bot compatibility.
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[10px] text-white font-bold">3</span>
+                    <h4 className="font-bold text-foreground text-sm">Phase 3: Pixel Setup & Live Launch</h4>
+                    <p className="text-foreground/75 text-xs leading-relaxed mt-1">
+                      We deploy tracking frameworks using Server-Side API endpoints (Conversions API) to ensure clean reporting signals. Next, we push optimized media, templates, or ad copies live under strict version controls.
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[10px] text-white font-bold">4</span>
+                    <h4 className="font-bold text-foreground text-sm">Phase 4: Ongoing Optimization & Dashboard Sync</h4>
+                    <p className="text-foreground/75 text-xs leading-relaxed mt-1">
+                      Every campaign is synced to a custom, real-time Looker Studio reporting dashboard. We run bi-weekly bid updates, adjust keyword match parameters, and design fresh creative assets to prevent ad fatigue and scale your revenue.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </article>
 
             {/* Right Sidebar Sticky Contact/FAQ widget */}

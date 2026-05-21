@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, HelpCircle, ChevronDown, CheckCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
 
@@ -7,6 +7,25 @@ export const metadata = {
   title: "Contact Us | FutureX Digital Marketing Udaipur",
   description: "Get in touch with FutureX. Claim your free digital speed and SEO audit. Call +91 77339 77227 or visit us at Arvana Mall, Udaipur, Rajasthan.",
 };
+
+const preSalesFaqs = [
+  {
+    question: "How long does it take to receive the free audit report?",
+    answer: "Our standard technical audit reports are compiled manually by senior designers and campaign managers, taking 24 to 48 business hours. We review your Core Web Vitals, organic keyword placements, indexation issues, and current social ad pixels before preparing the brief."
+  },
+  {
+    question: "Do you sign Non-Disclosure Agreements (NDAs) before consultations?",
+    answer: "Yes, confidentiality is our priority. If you have proprietary data, custom software features, or confidential brand retainers, let us know prior to the call and we will sign a standard NDA before sharing project details."
+  },
+  {
+    question: "Are there any long-term contract lock-ins for your services?",
+    answer: "No, we work on a transparent monthly retainer or milestone-based project structure. We earn our client relationships month-over-month. You can scale your ad budgets or modify SEO deliverable scopes with a simple 30-day notice."
+  },
+  {
+    question: "How do we coordinate calls across different time zones?",
+    answer: "Our international client desk accommodates meetings across GMT (London), EST/PST (United States), AEDT (Sydney), and GST (Dubai). When you book a slot, the system automatically schedules the calendar invite matching your local timezone."
+  }
+];
 
 export default function Contact() {
   const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116102.17019985776!2d73.61657658919943!3d24.582540934053366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x22448fd1900fd0d5%3A0xcd6778fe93753ef4!2sFuturex%20Digital%20Marketing!5e0!3m2!1sen!2sin!4v1779276049235!5m2!1sen!2sin";
@@ -20,7 +39,7 @@ export default function Contact() {
         <div className="absolute top-[15%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[15%] right-[-10%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="text-sm font-bold uppercase tracking-wider text-primary">Get In Touch</div>
@@ -130,6 +149,83 @@ export default function Contact() {
             {/* Contact Form Element */}
             <div className="lg:col-span-7">
               <ContactForm />
+            </div>
+          </div>
+
+          {/* Audit Process Section (SEO Expansion) */}
+          <div className="liquid-glass p-8 md:p-12 rounded-3xl border border-primary/10 space-y-8 max-w-6xl mx-auto">
+            <div className="space-y-4">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">Discovery Lifecycle</div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">What to Expect During Your Free Audit & Setup Consultation</h2>
+              <p className="text-foreground/75 leading-relaxed text-sm sm:text-base">
+                To guarantee absolute transparency, we outline every step of our technical intake audit. We believe in providing value before any payment is requested.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-4">
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">1</div>
+                <h4 className="font-bold text-foreground text-sm">Deep Technical Scan</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  Our web developers test your core speed index, mobile layout constraints, and indexing schemas to verify technical health.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">2</div>
+                <h4 className="font-bold text-foreground text-sm">Competitor Mapping</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  We reverse-engineer the top 3 ranking competitors in your geo-market to identify exact keyword gaps and ad creative hooks.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">3</div>
+                <h4 className="font-bold text-foreground text-sm">Roadmap Presentation</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  We schedule a 20-minute video session to walk you through a custom PDF highlighting exact code bugs and search options.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">4</div>
+                <h4 className="font-bold text-foreground text-sm">ROI Bidding Setup</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  If the strategy aligns, we define milestone-based retainers and set up Looker Studio reporting dashboards.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Consultation FAQ Section */}
+          <div className="space-y-8 max-w-4xl mx-auto pt-6">
+            <div className="text-center space-y-4 max-w-2xl mx-auto">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">Pre-Sales FAQs</div>
+              <h2 className="text-3xl font-extrabold tracking-tight">Common Consultation Queries</h2>
+            </div>
+
+            <div className="space-y-4">
+              {preSalesFaqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group border border-primary/10 rounded-2xl bg-white/50 backdrop-blur-md p-5 sm:p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden hover:border-primary/30"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer focus:outline-none select-none list-none">
+                    <div className="flex items-center gap-3 pr-4">
+                      <HelpCircle className="w-5 h-5 text-primary shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                      <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug tracking-tight">
+                        {faq.question}
+                      </h3>
+                    </div>
+                    <span className="shrink-0 transition-transform duration-300 group-open:rotate-180 bg-secondary/80 rounded-full p-1.5 border border-primary/5">
+                      <ChevronDown className="w-4 h-4 text-primary" />
+                    </span>
+                  </summary>
+                  <div className="mt-4 pl-8 border-t border-primary/5 pt-4 text-foreground/75 text-sm leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
 

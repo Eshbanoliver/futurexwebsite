@@ -79,7 +79,7 @@ export default function Services() {
         <div className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[20%] left-[-10%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="text-sm font-bold uppercase tracking-wider text-primary">Capabilities</div>
@@ -152,6 +152,43 @@ export default function Services() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Detailed Performance Methodology (SEO-Boost) */}
+          <div className="liquid-glass p-8 md:p-12 rounded-3xl border border-primary/10 space-y-8 max-w-6xl mx-auto">
+            <div className="space-y-4">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">Our Operations Framework</div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">The FutureX Performance-Marketing & Technical SEO Methodology</h2>
+              <p className="text-foreground/75 leading-relaxed text-sm sm:text-base">
+                At FutureX Digital Marketing, we don't believe in generic content campaigns or simple templated setups. We merge advanced software engineering practices with digital advertising and search engine optimization. Here is how we guarantee search engine results and paid ads return on investment (ROAS):
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm">01</div>
+                <h4 className="font-bold text-foreground">Core Web Vitals & Loading Speed Optimization</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  Google prioritizes websites that load instantly and offer flawless UX. We eliminate bloated CSS frameworks, lazy load dynamic media files, and host static structures on lightning-fast CDNs. This technical base ensures pages load in under 1 second, directly boosting your organic keywords ranking positions.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">02</div>
+                <h4 className="font-bold text-foreground">Programmatic Indexation & Semantic Keywords Mapping</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  We reverse-engineer what users are typing at each phase of their buying journey. By mapping informational, transactional, and navigational keywords, we ensure search crawl bots understand the hierarchy of your content directories. This structure maximizes organic search click-through rates.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">03</div>
+                <h4 className="font-bold text-foreground">Multi-Channel Bidding & Campaign Synchronization</h4>
+                <p className="text-foreground/70 text-xs leading-relaxed">
+                  We synchronize your Facebook and Instagram paid ad funnels with high-intent search Google and Bing campaigns. This multi-touch attribution creates cohesive customer journeys, lowers client acquisition costs (CAC), and builds long-term organic brand authority.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Above Footer Audit Promo */}
