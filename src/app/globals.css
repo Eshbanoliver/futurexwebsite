@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #120c1e;
-  --foreground: #f3f0f7;
+  --background: #f9f8fc;
+  --foreground: #140f26;
   
   --primary: #602dee;
   --primary-hover: #7b4bfb;
-  --secondary: #1e1729;
+  --secondary: #efeaf5;
   
-  --glass-bg: rgba(30, 23, 41, 0.45);
-  --glass-border: rgba(96, 45, 238, 0.15);
-  --glass-border-hover: rgba(96, 45, 238, 0.35);
-  --glass-glow: rgba(96, 45, 238, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(96, 45, 238, 0.1);
+  --glass-border-hover: rgba(96, 45, 238, 0.3);
+  --glass-glow: rgba(96, 45, 238, 0.04);
   
-  --accent-purple: #c084fc;
-  --accent-cyan: #22d3ee;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #0284c7;
   
   --font-outfit: 'Outfit', sans-serif;
 }
@@ -42,10 +42,10 @@
 
   @keyframes neon-pulse {
     from {
-      box-shadow: 0 0 15px rgba(96, 45, 238, 0.15), 0 0 5px rgba(96, 45, 238, 0.05);
+      box-shadow: 0 0 15px rgba(96, 45, 238, 0.1), 0 0 5px rgba(96, 45, 238, 0.03);
     }
     to {
-      box-shadow: 0 0 30px rgba(96, 45, 238, 0.4), 0 0 15px rgba(96, 45, 238, 0.15);
+      box-shadow: 0 0 30px rgba(96, 45, 238, 0.25), 0 0 15px rgba(96, 45, 238, 0.1);
     }
   }
   @keyframes float-up {
@@ -67,28 +67,33 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Ensure headings default to dark text color in light theme */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #120c1e;
+  background: #f1f0f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(96, 45, 238, 0.3);
+  background: rgba(96, 45, 238, 0.25);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(96, 45, 238, 0.6);
+  background: rgba(96, 45, 238, 0.5);
 }
 
 /* Liquid Glass Utilities */
 .liquid-glass {
-  background: rgba(30, 23, 41, 0.55);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(96, 45, 238, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(96, 45, 238, 0.12);
+  box-shadow: 0 10px 30px 0 rgba(96, 45, 238, 0.04);
 }
 
 .liquid-glass-hover {
@@ -96,56 +101,57 @@ body {
 }
 .liquid-glass-hover:hover {
   border-color: rgba(96, 45, 238, 0.45);
-  box-shadow: 0 8px 32px 0 rgba(96, 45, 238, 0.2), 0 0 15px rgba(96, 45, 238, 0.15) inset;
+  box-shadow: 0 10px 30px 0 rgba(96, 45, 238, 0.12), 0 0 15px rgba(96, 45, 238, 0.05) inset;
   transform: translateY(-3px);
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(96, 45, 238, 0.05);
+  border: 1px solid rgba(96, 45, 238, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .glass-input {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(96, 45, 238, 0.15);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transition: all 0.3s ease;
   font-size: 16px; /* Safeguard iOS zoom */
+  color: var(--foreground);
 }
 .glass-input:focus {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.95);
   border-color: rgba(96, 45, 238, 0.6);
-  box-shadow: 0 0 15px rgba(96, 45, 238, 0.2);
+  box-shadow: 0 0 15px rgba(96, 45, 238, 0.15);
   outline: none;
 }
 
 .glow-text {
-  text-shadow: 0 0 15px rgba(96, 45, 238, 0.6);
+  text-shadow: 0 0 15px rgba(96, 45, 238, 0.3);
 }
 
 .glow-btn-primary {
   background: linear-gradient(135deg, #602dee 0%, #8b5cf6 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(96, 45, 238, 0.4);
+  box-shadow: 0 4px 20px rgba(96, 45, 238, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glow-btn-primary:hover {
-  box-shadow: 0 4px 25px rgba(96, 45, 238, 0.7), 0 0 10px rgba(255, 255, 255, 0.25) inset;
+  box-shadow: 0 4px 25px rgba(96, 45, 238, 0.5), 0 0 10px rgba(255, 255, 255, 0.2) inset;
   transform: translateY(-2px);
 }
 
 .glow-btn-secondary {
-  background: rgba(30, 23, 41, 0.45);
+  background: rgba(255, 255, 255, 0.65);
   border: 1px solid rgba(96, 45, 238, 0.25);
+  color: var(--foreground) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glow-btn-secondary:hover {
-  background: rgba(96, 45, 238, 0.1);
+  background: rgba(96, 45, 238, 0.05);
   border-color: rgba(96, 45, 238, 0.6);
-  box-shadow: 0 0 15px rgba(96, 45, 238, 0.2);
+  box-shadow: 0 0 15px rgba(96, 45, 238, 0.1);
   transform: translateY(-2px);
 }
-

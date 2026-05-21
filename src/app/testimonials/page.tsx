@@ -58,7 +58,7 @@ export default function Testimonials() {
     <>
       <JsonLd schema={localBusinessSchema} />
 
-      <main className="relative min-h-screen pt-32 pb-20 bg-background text-white overflow-hidden">
+      <main className="relative min-h-screen pt-32 pb-20 bg-background text-foreground overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[10%] right-[-10%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
@@ -67,7 +67,7 @@ export default function Testimonials() {
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="text-sm font-bold uppercase tracking-wider text-primary">Reviews</div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-foreground to-primary-hover bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-foreground via-[#332a54] to-primary bg-clip-text text-transparent">
               Validated Success Across Global Frontiers
             </h1>
             <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">
@@ -99,9 +99,9 @@ export default function Testimonials() {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 flex items-center justify-between mt-4">
+                <div className="pt-6 border-t border-primary/10 flex items-center justify-between mt-4">
                   <div>
-                    <h4 className="text-white font-bold text-sm">{rev.client}</h4>
+                    <h4 className="text-foreground font-bold text-sm">{rev.client}</h4>
                     <p className="text-foreground/50 text-[11px] font-semibold mt-0.5">{rev.role} • {rev.region}</p>
                   </div>
                   <span className="text-[11px] font-bold px-2.5 py-1 rounded bg-[#25D366]/10 text-[#25D366] shrink-0">
@@ -113,13 +113,13 @@ export default function Testimonials() {
           </div>
 
           {/* CTA Box */}
-          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/20 shadow-xl max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white">Join Our Roster of Successful Brands</h2>
+          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/10 shadow-xl max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">Join Our Roster of Successful Brands</h2>
             <p className="text-foreground/70 max-w-lg mx-auto text-sm leading-relaxed">
               We focus on measurable pipeline metrics, transparent reporting, and high CTR creative hooks. Let's schedule an audit of your business setup.
             </p>
             <div className="pt-2">
-              <Link href="/contact" className="glow-btn-primary px-8 py-4 rounded-xl text-base font-bold text-white inline-block">
+              <Link href="/contact" className="glow-btn-primary px-8 py-4 rounded-xl text-base font-bold text-white inline-block hover:no-underline">
                 Claim My Free Audit (Value $499)
               </Link>
             </div>

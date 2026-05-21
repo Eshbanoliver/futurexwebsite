@@ -40,17 +40,17 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="liquid-glass p-8 rounded-2xl text-center space-y-6 max-w-lg mx-auto shadow-[0_0_30px_rgba(96,45,238,0.2)]">
+      <div className="liquid-glass p-8 rounded-2xl text-center space-y-6 max-w-lg mx-auto shadow-[0_4px_20px_rgba(96,45,238,0.05)]">
         <div className="flex justify-center">
           <CheckCircle className="w-16 h-16 text-[#25D366] animate-pulse" />
         </div>
-        <h3 className="text-2xl font-bold text-white">Inquiry Received!</h3>
+        <h3 className="text-2xl font-bold text-foreground">Inquiry Received!</h3>
         <p className="text-foreground/75 leading-relaxed text-sm">
           Thank you for reaching out to FutureX Digital Marketing. One of our senior strategists will review your project and get in touch within the next 2 hours.
         </p>
         <button
           onClick={() => setIsSubmitted(false)}
-          className="glow-btn-secondary px-6 py-2 rounded-xl text-sm font-bold text-white transition-all duration-300"
+          className="glow-btn-secondary px-6 py-2 rounded-xl text-sm font-bold text-foreground transition-all duration-300"
         >
           Send Another Message
         </button>
@@ -59,9 +59,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="liquid-glass p-6 md:p-8 rounded-2xl space-y-5 shadow-2xl relative overflow-hidden">
+    <form onSubmit={handleSubmit} className="liquid-glass p-6 md:p-8 rounded-2xl space-y-5 shadow-xl relative overflow-hidden">
       {/* Subtle border glow */}
-      <div className="absolute inset-0 border border-primary/20 pointer-events-none rounded-2xl" />
+      <div className="absolute inset-0 border border-primary/10 pointer-events-none rounded-2xl" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="space-y-1">
@@ -75,7 +75,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full glass-input px-4 py-3 rounded-xl text-white placeholder-white/30 text-[15px]"
+            className="w-full glass-input px-4 py-3 rounded-xl text-foreground placeholder-foreground/30 text-[15px]"
             placeholder="John Doe"
           />
         </div>
@@ -90,7 +90,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full glass-input px-4 py-3 rounded-xl text-white placeholder-white/30 text-[15px]"
+            className="w-full glass-input px-4 py-3 rounded-xl text-foreground placeholder-foreground/30 text-[15px]"
             placeholder="john@example.com"
           />
         </div>
@@ -108,7 +108,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full glass-input px-4 py-3 rounded-xl text-white placeholder-white/30 text-[15px]"
+            className="w-full glass-input px-4 py-3 rounded-xl text-foreground placeholder-foreground/30 text-[15px]"
             placeholder="+1 (555) 000-0000"
           />
         </div>
@@ -122,11 +122,11 @@ export default function ContactForm() {
             value={formData.service}
             onChange={handleChange}
             required
-            className="w-full glass-input px-4 py-3 rounded-xl text-white/80 placeholder-white/30 text-[15px] bg-secondary"
+            className="w-full glass-input px-4 py-3 rounded-xl text-foreground/85 placeholder-foreground/30 text-[15px] bg-white"
           >
-            <option value="" disabled className="text-white/40">Select a Service</option>
+            <option value="" disabled className="text-foreground/40 bg-white">Select a Service</option>
             {Object.values(servicesData).map((service) => (
-              <option key={service.slug} value={service.slug} className="text-white bg-secondary">
+              <option key={service.slug} value={service.slug} className="text-foreground bg-white">
                 {service.name}
               </option>
             ))}
@@ -145,7 +145,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full glass-input px-4 py-3 rounded-xl text-white placeholder-white/30 text-[15px]"
+          className="w-full glass-input px-4 py-3 rounded-xl text-foreground placeholder-foreground/30 text-[15px]"
           placeholder="Tell us about your campaign goals, budget constraints, or project specifications..."
         />
       </div>

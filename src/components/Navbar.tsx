@@ -43,7 +43,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-secondary/80 backdrop-blur-md border-b border-primary/20 shadow-[0_4px_30px_rgba(96,45,238,0.1)]"
+          ? "py-3 bg-white/80 backdrop-blur-md border-b border-primary/10 shadow-[0_4px_30px_rgba(96,45,238,0.04)]"
           : "py-5 bg-transparent"
       }`}
     >
@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-white via-primary-hover to-accent-purple bg-clip-text text-transparent group-hover:glow-text transition-all duration-300">
+            <span className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-[#140f26] via-primary to-accent-purple bg-clip-text text-transparent group-hover:glow-text transition-all duration-300">
               FUTURE<span className="text-primary font-black">X</span>
             </span>
           </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 15 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-2 w-72 rounded-xl border border-primary/20 bg-secondary/95 backdrop-blur-xl shadow-2xl p-4 grid grid-cols-1 gap-2"
+                          className="absolute left-0 mt-2 w-72 rounded-xl border border-primary/10 bg-white/95 backdrop-blur-xl shadow-2xl p-4 grid grid-cols-1 gap-2"
                         >
                           <Link
                             href="/services"
@@ -100,7 +100,7 @@ export default function Navbar() {
                               className={`block px-3 py-1.5 rounded-lg text-[13.5px] hover:bg-primary/10 transition-colors ${
                                 pathname === `/services/${service.slug}`
                                   ? "text-primary font-bold bg-primary/5"
-                                  : "text-foreground/80 hover:text-white"
+                                  : "text-foreground/80 hover:text-primary"
                               }`}
                             >
                               {service.name}
@@ -131,14 +131,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+917733977227"
-              className="flex items-center space-x-2 text-[15px] font-semibold text-foreground/90 hover:text-primary transition-colors py-2 px-3 rounded-lg border border-white/5 bg-white/5 hover:bg-primary/10"
+              className="flex items-center space-x-2 text-[15px] font-semibold text-foreground/90 hover:text-primary transition-colors py-2 px-3 rounded-lg border border-primary/10 bg-primary/5 hover:bg-primary/10"
             >
               <Phone className="w-4 h-4 text-primary" />
               <span>+91 77339 77227</span>
             </a>
             <Link
               href="/contact"
-              className="glow-btn-primary px-5 py-2.5 rounded-xl text-sm font-bold text-white tracking-wide"
+              className="glow-btn-primary px-5 py-2.5 rounded-xl text-sm font-bold text-white tracking-wide hover:no-underline"
             >
               Book Free Audit
             </Link>
@@ -151,7 +151,7 @@ export default function Navbar() {
               className="inline-flex items-center justify-center p-2 rounded-lg text-foreground/90 hover:text-primary focus:outline-none"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="h-6 h-6" /> : <Menu className="h-6 h-6" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-secondary/95 backdrop-blur-xl border-b border-primary/20 shadow-2xl overflow-hidden"
+            className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-2xl overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-4">
               {navLinks.map((link) => {
@@ -189,7 +189,7 @@ export default function Navbar() {
                             className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
                               pathname === `/services/${service.slug}`
                                 ? "text-primary font-bold bg-primary/5"
-                                : "text-foreground/70 hover:text-white hover:bg-primary/5"
+                                : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                             }`}
                           >
                             {service.name}
@@ -213,12 +213,12 @@ export default function Navbar() {
                 );
               })}
 
-              <hr className="border-white/5" />
+              <hr className="border-primary/10" />
 
               <div className="px-3 pt-2 space-y-3">
                 <a
                   href="tel:+917733977227"
-                  className="flex items-center space-x-3 w-full py-3 px-4 rounded-xl border border-white/5 bg-white/5 hover:bg-primary/10 text-base font-bold transition-all duration-300"
+                  className="flex items-center space-x-3 w-full py-3 px-4 rounded-xl border border-primary/10 bg-primary/5 hover:bg-primary/10 text-base font-bold transition-all duration-300"
                 >
                   <Phone className="w-5 h-5 text-primary" />
                   <span>+91 77339 77227</span>

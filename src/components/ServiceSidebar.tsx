@@ -14,10 +14,10 @@ export default function ServiceSidebar({ faqs }: ServiceSidebarProps) {
   return (
     <aside className="space-y-8 lg:sticky lg:top-28">
       {/* Contact Widget */}
-      <div className="liquid-glass p-6 rounded-2xl border border-primary/20 space-y-5 shadow-xl relative overflow-hidden">
+      <div className="liquid-glass p-6 rounded-2xl border border-primary/10 space-y-5 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-full blur-xl pointer-events-none" />
         
-        <h3 className="text-lg font-bold text-white border-b border-white/5 pb-3">
+        <h3 className="text-lg font-bold text-foreground border-b border-primary/10 pb-3">
           Quick Consultation
         </h3>
 
@@ -59,7 +59,7 @@ export default function ServiceSidebar({ faqs }: ServiceSidebarProps) {
             href="https://wa.me/917733977227"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-2 w-full glow-btn-secondary py-3 rounded-xl text-xs font-bold text-white transition-colors"
+            className="flex items-center justify-center space-x-2 w-full glow-btn-secondary py-3 rounded-xl text-xs font-bold text-foreground transition-colors"
           >
             <MessageSquare className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
             <span>WhatsApp Chat</span>
@@ -67,7 +67,7 @@ export default function ServiceSidebar({ faqs }: ServiceSidebarProps) {
         </div>
 
         {/* Social Links */}
-        <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+        <div className="pt-4 border-t border-primary/10 flex items-center justify-between">
           <span className="text-[10px] font-bold text-foreground/50 uppercase tracking-wider">Social Feed</span>
           <div className="flex space-x-3">
             <a
@@ -126,7 +126,7 @@ export default function ServiceSidebar({ faqs }: ServiceSidebarProps) {
                   className="w-full px-4 py-3 flex items-center justify-between text-left focus:outline-none"
                   aria-expanded={openFaq === idx}
                 >
-                  <span className="text-white font-bold text-xs">{faq.question}</span>
+                  <span className="text-foreground font-bold text-xs">{faq.question}</span>
                   <ChevronDown
                     className={`w-4 h-4 text-primary shrink-0 transition-transform duration-300 ${
                       openFaq === idx ? "rotate-180" : ""
@@ -138,7 +138,7 @@ export default function ServiceSidebar({ faqs }: ServiceSidebarProps) {
                     openFaq === idx ? "max-h-40 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
                   }`}
                 >
-                  <p className="px-4 pb-4 pt-1 text-foreground/75 text-xs leading-relaxed border-t border-white/5">
+                  <p className="px-4 pb-4 pt-1 text-foreground/75 text-xs leading-relaxed border-t border-primary/10">
                     {faq.answer}
                   </p>
                 </div>

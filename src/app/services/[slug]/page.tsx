@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/navigation";
 import { notFound } from "next/navigation";
 import { CheckCircle, ShieldCheck, ArrowRight, Check } from "lucide-react";
 import { servicesData } from "@/data/services";
@@ -84,7 +83,7 @@ export default async function ServicePage({ params }: PageProps) {
       <JsonLd schema={serviceSchema} />
       <JsonLd schema={faqSchema} />
 
-      <main className="relative min-h-screen pt-32 pb-20 bg-background text-white overflow-hidden">
+      <main className="relative min-h-screen pt-32 pb-20 bg-background text-foreground overflow-hidden">
         {/* Glow gradients */}
         <div className="absolute top-[10%] left-[-15%] w-[45%] h-[45%] bg-primary/10 rounded-full blur-[110px] pointer-events-none" />
         <div className="absolute bottom-[20%] right-[-15%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[110px] pointer-events-none" />
@@ -102,7 +101,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                   Target SEO Regions: {service.locationFocus}
                 </span>
-                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-foreground to-primary-hover bg-clip-text text-transparent">
+                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-foreground via-[#332a54] to-primary bg-clip-text text-transparent">
                   {service.title}
                 </h1>
               </div>
@@ -114,7 +113,7 @@ export default async function ServicePage({ params }: PageProps) {
 
               {/* Key Deliverables Points */}
               <div className="space-y-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white">What We Deliver</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">What We Deliver</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {service.keyPoints.map((pt, i) => (
                     <div key={i} className="liquid-glass p-4 rounded-xl border border-primary/10 flex items-start space-x-3">
@@ -127,7 +126,7 @@ export default async function ServicePage({ params }: PageProps) {
 
               {/* Why Choose Us for Niche */}
               <div className="space-y-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">
                   Why Choose Us for {service.name}
                 </h2>
                 <p className="text-foreground/70 text-sm leading-relaxed">
@@ -155,9 +154,9 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
 
           {/* Above Footer Full-Width CTA Card */}
-          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/30 shadow-[0_0_30px_rgba(96,45,238,0.15)] relative overflow-hidden">
+          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/10 shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent-purple/5 pointer-events-none" />
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-foreground leading-tight">
               Ready to Accelerate Your Leads with {service.name}?
             </h2>
             <p className="text-foreground/80 max-w-xl mx-auto text-sm leading-relaxed">

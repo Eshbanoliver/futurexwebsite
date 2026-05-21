@@ -14,7 +14,7 @@ export default function Services() {
     <>
       <JsonLd schema={localBusinessSchema} />
 
-      <main className="relative min-h-screen pt-32 pb-20 bg-background text-white overflow-hidden">
+      <main className="relative min-h-screen pt-32 pb-20 bg-background text-foreground overflow-hidden">
         {/* Glowing background highlights */}
         <div className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[20%] left-[-10%] w-[45%] h-[45%] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
@@ -23,7 +23,7 @@ export default function Services() {
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="text-sm font-bold uppercase tracking-wider text-primary">Capabilities</div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-foreground to-primary-hover bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-foreground via-[#332a54] to-primary bg-clip-text text-transparent">
               High-End Growth Services Built For Speed & Revenue
             </h1>
             <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">
@@ -36,7 +36,7 @@ export default function Services() {
             {Object.values(servicesData).map((svc) => (
               <div
                 key={svc.slug}
-                className="liquid-glass p-6 md:p-8 rounded-2xl border border-primary/10 flex flex-col justify-between hover:border-primary/40 hover:shadow-[0_8px_32px_0_rgba(96,45,238,0.15)] transition-all duration-300 group"
+                className="liquid-glass p-6 md:p-8 rounded-2xl border border-primary/10 flex flex-col justify-between hover:border-primary/40 hover:shadow-[0_8px_32px_0_rgba(96,45,238,0.08)] transition-all duration-300 group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -48,7 +48,7 @@ export default function Services() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {svc.name}
                   </h3>
 
@@ -57,7 +57,7 @@ export default function Services() {
                   </p>
 
                   <div className="space-y-1.5 pt-2">
-                    <div className="text-xs font-bold text-white/95 uppercase tracking-wider">Key Features:</div>
+                    <div className="text-xs font-bold text-foreground/95 uppercase tracking-wider">Key Features:</div>
                     <ul className="space-y-1">
                       {svc.keyPoints.slice(0, 2).map((pt, i) => (
                         <li key={i} className="flex items-start space-x-2 text-[12px] text-foreground/60">
@@ -69,7 +69,7 @@ export default function Services() {
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 mt-6 flex items-center justify-between">
+                <div className="pt-6 border-t border-primary/10 mt-6 flex items-center justify-between">
                   <span className="text-[11px] text-foreground/40 font-bold uppercase tracking-wider">
                     Ready-To-Rank
                   </span>
@@ -86,17 +86,17 @@ export default function Services() {
           </div>
 
           {/* Above Footer Audit Promo */}
-          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/30 shadow-[0_0_30px_rgba(96,45,238,0.1)] max-w-4xl mx-auto">
+          <div className="liquid-glass p-8 md:p-12 rounded-3xl text-center space-y-6 border border-primary/10 shadow-xl max-w-4xl mx-auto">
             <div className="inline-flex items-center space-x-2 glass-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-primary">
               <Sparkles className="w-4 h-4" />
               <span>Complimentary Audit Session</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white">Let Us Audit Your Search and Ad Funnels</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">Let Us Audit Your Search and Ad Funnels</h2>
             <p className="text-foreground/70 max-w-lg mx-auto text-sm leading-relaxed">
               We'll pinpoint exactly why your website might be losing speed marks or ranking positions. We'll present the audit results in a customized document.
             </p>
             <div className="pt-2">
-              <Link href="/contact" className="glow-btn-primary px-8 py-4 rounded-xl text-base font-bold text-white inline-block">
+              <Link href="/contact" className="glow-btn-primary px-8 py-4 rounded-xl text-base font-bold text-white inline-block hover:no-underline">
                 Claim My Free Audit (Value $499)
               </Link>
             </div>
