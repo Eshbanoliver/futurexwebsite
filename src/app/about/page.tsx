@@ -9,6 +9,41 @@ export const metadata = {
 };
 
 export default function About() {
+  const eeatValues = [
+    {
+      letter: "E",
+      title: "Experience",
+      desc: "Over 5+ years building software products and driving millions in ad spend across international channels.",
+      icon: Award,
+      bg: "bg-gradient-to-br from-[#6366f1] to-[#3730a3]",
+      shadow: "shadow-[0_15px_30px_rgba(99,102,241,0.15)]",
+    },
+    {
+      letter: "E",
+      title: "Expertise",
+      desc: "Our team consists of Google-certified campaign managers, senior React engineers, and native copywriters.",
+      icon: GraduationCap,
+      bg: "bg-gradient-to-br from-[#10b981] to-[#047857]",
+      shadow: "shadow-[0_15px_30px_rgba(16,185,129,0.15)]",
+    },
+    {
+      letter: "A",
+      title: "Authoritativeness",
+      desc: "Proven keyword ranks, case studies, and published editorial articles on authority marketing forums.",
+      icon: CheckCircle,
+      bg: "bg-gradient-to-br from-[#f59e0b] to-[#c2410c]",
+      shadow: "shadow-[0_15px_30px_rgba(245,158,11,0.15)]",
+    },
+    {
+      letter: "T",
+      title: "Trustworthiness",
+      desc: "We use secure data practices, transparent reporting retainers, and sign strict NDAs before project briefings.",
+      icon: ShieldCheck,
+      bg: "bg-gradient-to-br from-[#ec4899] to-[#a855f7]",
+      shadow: "shadow-[0_15px_30px_rgba(236,72,153,0.15)]",
+    }
+  ];
+
   return (
     <>
       <JsonLd schema={localBusinessSchema} />
@@ -32,7 +67,7 @@ export default function About() {
           {/* Core Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-bold">Why E-E-A-T Matters To Us</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight">Why E-E-A-T Matters To Us</h2>
               <p className="text-foreground/75 leading-relaxed text-sm">
                 Google ranks sites based on **Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T)**. We embed these guidelines directly into our client campaigns.
               </p>
@@ -46,45 +81,47 @@ export default function About() {
 
             {/* E-E-A-T Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="liquid-glass p-6 rounded-2xl border border-primary/10 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground text-sm sm:text-base">Trustworthiness</h3>
-                <p className="text-foreground/60 text-xs leading-relaxed">
-                  We use secure data practices, transparent reporting retainers, and sign strict NDAs before project briefings.
-                </p>
-              </div>
+              {eeatValues.map((val, i) => {
+                const Icon = val.icon;
+                return (
+                  <div
+                    key={i}
+                    className={`relative overflow-hidden rounded-[2rem] p-6 sm:p-8 flex flex-col justify-start min-h-[220px] ${val.bg} ${val.shadow} transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] cursor-default`}
+                  >
+                    {/* Organic curved shape overlays to mimic reference design */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[2rem]">
+                      {/* Top right circle wave */}
+                      <div className="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-white/[0.07] mix-blend-overlay" />
+                      {/* Top right smaller circle accent */}
+                      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/[0.05] mix-blend-overlay" />
+                      {/* Bottom left sweeping wave */}
+                      <div className="absolute -left-12 -bottom-12 w-40 h-40 rounded-full bg-white/[0.06] mix-blend-overlay" />
+                      {/* Bottom left darker depth shape */}
+                      <div className="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-black/[0.04] mix-blend-overlay" />
+                    </div>
 
-              <div className="liquid-glass p-6 rounded-2xl border border-primary/10 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <GraduationCap className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground text-sm sm:text-base">Expertise</h3>
-                <p className="text-foreground/60 text-xs leading-relaxed">
-                  Our team consists of Google-certified campaign managers, senior React engineers, and native copywriters.
-                </p>
-              </div>
+                    {/* Translucent Serif Capital Letter */}
+                    <div className="absolute top-2 right-4 text-[7rem] sm:text-[8rem] font-serif font-black text-white/10 select-none pointer-events-none leading-none">
+                      {val.letter}
+                    </div>
 
-              <div className="liquid-glass p-6 rounded-2xl border border-primary/10 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground text-sm sm:text-base">Experience</h3>
-                <p className="text-foreground/60 text-xs leading-relaxed">
-                  Over 5+ years building software products and driving millions in ad spend across international channels.
-                </p>
-              </div>
+                    {/* Icon container */}
+                    <div className="relative z-10 w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center border border-white/10 mb-4 shadow-sm">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
 
-              <div className="liquid-glass p-6 rounded-2xl border border-primary/10 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground text-sm sm:text-base">Authoritativeness</h3>
-                <p className="text-foreground/60 text-xs leading-relaxed">
-                  Proven keyword ranks, case studies, and published editorial articles on authority marketing forums.
-                </p>
-              </div>
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col justify-start space-y-2">
+                      <h3 className="font-serif text-lg font-bold text-white tracking-tight">
+                        {val.title}
+                      </h3>
+                      <p className="text-white/90 text-xs sm:text-sm leading-relaxed font-sans font-medium">
+                        {val.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
