@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { servicesData } from "@/data/services";
 
@@ -16,10 +17,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Col */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block">
-              <span className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-white via-primary-hover to-accent-purple bg-clip-text text-transparent">
-                FUTURE<span className="text-primary font-black">X</span>
-              </span>
+            <Link href="/" className="inline-block group">
+              <Image
+                src="/logo.png"
+                alt="FutureX Digital Marketing Logo"
+                width={122}
+                height={45}
+                className="h-11 w-auto object-contain brightness-0 invert opacity-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               We specialize in custom web architectures, visual branding, creative assets, and performance-based marketing. Accelerate your pipeline in London, US, AUS, Dubai, and Udaipur.

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -51,9 +52,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-[#140f26] via-primary to-accent-purple bg-clip-text text-transparent group-hover:glow-text transition-all duration-300">
-              FUTURE<span className="text-primary font-black">X</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="FutureX Digital Marketing Logo"
+              width={122}
+              height={45}
+              priority
+              className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Nav */}
