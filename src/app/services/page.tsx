@@ -25,6 +25,51 @@ export default function Services() {
     "from-[#14b8a6] to-[#3b82f6] shadow-[0_0_20px_rgba(20,184,166,0.3)]",
   ];
 
+  const cardBorders = [
+    "border-red-500/20 hover:border-red-500/80 hover:shadow-[0_8px_32px_rgba(239,68,68,0.1)]",
+    "border-blue-500/20 hover:border-blue-500/80 hover:shadow-[0_8px_32px_rgba(59,130,246,0.1)]",
+    "border-emerald-500/20 hover:border-emerald-500/80 hover:shadow-[0_8px_32px_rgba(16,185,129,0.1)]",
+    "border-pink-500/20 hover:border-pink-500/80 hover:shadow-[0_8px_32px_rgba(236,72,153,0.1)]",
+    "border-amber-500/20 hover:border-amber-500/80 hover:shadow-[0_8px_32px_rgba(245,158,11,0.1)]",
+    "border-violet-500/20 hover:border-violet-500/80 hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)]",
+    "border-cyan-500/20 hover:border-cyan-500/80 hover:shadow-[0_8px_32px_rgba(6,182,212,0.1)]",
+    "border-rose-500/20 hover:border-rose-500/80 hover:shadow-[0_8px_32px_rgba(244,63,94,0.1)]",
+    "border-indigo-500/20 hover:border-indigo-500/80 hover:shadow-[0_8px_32px_rgba(99,102,241,0.1)]",
+    "border-orange-500/20 hover:border-orange-500/80 hover:shadow-[0_8px_32px_rgba(249,115,22,0.1)]",
+    "border-fuchsia-500/20 hover:border-fuchsia-500/80 hover:shadow-[0_8px_32px_rgba(168,85,247,0.1)]",
+    "border-teal-500/20 hover:border-teal-500/80 hover:shadow-[0_8px_32px_rgba(20,184,166,0.1)]",
+  ];
+
+  const cardBadges = [
+    "bg-red-50/80 text-red-600 border-red-200/50",
+    "bg-blue-50/80 text-blue-600 border-blue-200/50",
+    "bg-emerald-50/80 text-emerald-600 border-emerald-200/50",
+    "bg-pink-50/80 text-pink-600 border-pink-200/50",
+    "bg-amber-50/80 text-amber-600 border-amber-200/50",
+    "bg-violet-50/80 text-violet-600 border-violet-200/50",
+    "bg-cyan-50/80 text-cyan-600 border-cyan-200/50",
+    "bg-rose-50/80 text-rose-600 border-rose-200/50",
+    "bg-indigo-50/80 text-indigo-600 border-indigo-200/50",
+    "bg-orange-50/80 text-orange-600 border-orange-200/50",
+    "bg-fuchsia-50/80 text-fuchsia-600 border-fuchsia-200/50",
+    "bg-teal-50/80 text-teal-600 border-teal-200/50",
+  ];
+
+  const cardTextHovers = [
+    "group-hover:text-red-600",
+    "group-hover:text-blue-600",
+    "group-hover:text-emerald-600",
+    "group-hover:text-pink-600",
+    "group-hover:text-amber-600",
+    "group-hover:text-violet-600",
+    "group-hover:text-cyan-600",
+    "group-hover:text-rose-600",
+    "group-hover:text-indigo-600",
+    "group-hover:text-orange-600",
+    "group-hover:text-fuchsia-600",
+    "group-hover:text-teal-600",
+  ];
+
   return (
     <>
       <JsonLd schema={localBusinessSchema} />
@@ -51,7 +96,9 @@ export default function Services() {
             {Object.values(servicesData).map((svc, idx) => (
               <div
                 key={svc.slug}
-                className="liquid-glass p-6 md:p-8 rounded-2xl border border-primary/10 flex flex-col justify-between hover:border-primary/40 hover:shadow-[0_8px_32px_0_rgba(96,45,238,0.08)] transition-all duration-300 group relative overflow-hidden"
+                className={`liquid-glass p-6 md:p-8 rounded-2xl border flex flex-col justify-between transition-all duration-300 group relative overflow-hidden ${
+                  cardBorders[idx % cardBorders.length]
+                }`}
               >
                 {/* Vibrant color blob at bottom-left corner */}
                 <div
@@ -62,7 +109,7 @@ export default function Services() {
 
                 <div className="space-y-4 relative z-10">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full border ${cardBadges[idx % cardBadges.length]}`}>
                       {svc.name === "Search Engine Optimization (SEO)" ? "SEO Focus" : "Premium"}
                     </span>
                     <span className="text-[11px] text-foreground/50 font-semibold tracking-wider uppercase">
@@ -70,7 +117,7 @@ export default function Services() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className={`text-xl font-bold text-foreground transition-colors ${cardTextHovers[idx % cardTextHovers.length]}`}>
                     {svc.name}
                   </h3>
 
@@ -97,7 +144,7 @@ export default function Services() {
                   </span>
                   <Link
                     href={`/services/${svc.slug}`}
-                    className="text-sm font-bold text-primary flex items-center space-x-1.5 hover:underline"
+                    className={`text-sm font-bold flex items-center space-x-1.5 hover:underline text-primary transition-colors ${cardTextHovers[idx % cardTextHovers.length]}`}
                   >
                     <span>Analyze Service</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
