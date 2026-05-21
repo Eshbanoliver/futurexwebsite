@@ -33,33 +33,75 @@ export default function Home() {
     {
       slug: "website-development",
       name: "Website Development",
-      description: "Custom React & Next.js applications engineered for high conversion rates and extreme speed."
+      description: "Custom React & Next.js applications engineered for high conversion rates and extreme speed.",
+      icon: Zap
     },
     {
       slug: "search-engine-optimization",
       name: "Search Engine Optimization",
-      description: "Dominate search ranks across Google UK, USA, UAE, and Aus with white-hat technical optimization."
+      description: "Dominate search ranks across Google UK, USA, UAE, and Aus with white-hat technical optimization.",
+      icon: TrendingUp
     },
     {
       slug: "meta-ads",
       name: "Meta Ads (FB & Insta)",
-      description: "Turn social feeds into automated sales pipelines with high-ROAS target campaigns."
+      description: "Turn social feeds into automated sales pipelines with high-ROAS target campaigns.",
+      icon: Target
     },
     {
       slug: "video-editing",
       name: "Video Editing",
-      description: "Engaging short-form Reels, TikToks, and commercials designed to capture retention hooks."
+      description: "Engaging short-form Reels, TikToks, and commercials designed to capture retention hooks.",
+      icon: Sparkles
     },
     {
       slug: "social-media-management",
       name: "Social Media Management",
-      description: "End-to-end community building, copywriting, graphic designs, and calendar scheduling."
+      description: "End-to-end community building, copywriting, graphic designs, and calendar scheduling.",
+      icon: Users
     },
     {
       slug: "graphic-design",
       name: "Graphic Design",
-      description: "Premium visual assets, luxury layout branding, and vector corporate identity systems."
+      description: "Premium visual assets, luxury layout branding, and vector corporate identity systems.",
+      icon: Globe
     }
+  ];
+
+  const mainServiceBlobs = [
+    "from-[#3b82f6] to-[#06b6d4] shadow-[0_0_20px_rgba(59,130,246,0.3)]",
+    "from-[#10b981] to-[#14b8a6] shadow-[0_0_20px_rgba(16,185,129,0.3)]",
+    "from-[#ec4899] to-[#8b5cf6] shadow-[0_0_20px_rgba(236,72,153,0.3)]",
+    "from-[#ef4444] to-[#f97316] shadow-[0_0_20px_rgba(239,68,68,0.3)]",
+    "from-[#f59e0b] to-[#eab308] shadow-[0_0_20px_rgba(245,158,11,0.3)]",
+    "from-[#14b8a6] to-[#3b82f6] shadow-[0_0_20px_rgba(20,184,166,0.3)]",
+  ];
+
+  const mainServiceBorders = [
+    "!border-blue-500/20 hover:!border-blue-500/80 hover:shadow-[0_8px_32px_rgba(59,130,246,0.12)]",
+    "!border-emerald-500/20 hover:!border-emerald-500/80 hover:shadow-[0_8px_32px_rgba(16,185,129,0.12)]",
+    "!border-pink-500/20 hover:!border-pink-500/80 hover:shadow-[0_8px_32px_rgba(236,72,153,0.12)]",
+    "!border-red-500/20 hover:!border-red-500/80 hover:shadow-[0_8px_32px_rgba(239,68,68,0.12)]",
+    "!border-amber-500/20 hover:!border-amber-500/80 hover:shadow-[0_8px_32px_rgba(245,158,11,0.12)]",
+    "!border-teal-500/20 hover:!border-teal-500/80 hover:shadow-[0_8px_32px_rgba(20,184,166,0.12)]",
+  ];
+
+  const mainServiceTextHovers = [
+    "group-hover:text-blue-600",
+    "group-hover:text-emerald-600",
+    "group-hover:text-pink-600",
+    "group-hover:text-red-600",
+    "group-hover:text-amber-600",
+    "group-hover:text-teal-600",
+  ];
+
+  const mainServiceIcons = [
+    "bg-blue-50/80 text-blue-600 border border-blue-200/50",
+    "bg-emerald-50/80 text-emerald-600 border border-emerald-200/50",
+    "bg-pink-50/80 text-pink-600 border border-pink-200/50",
+    "bg-red-50/80 text-red-600 border border-red-200/50",
+    "bg-amber-50/80 text-amber-600 border border-amber-200/50",
+    "bg-teal-50/80 text-teal-600 border border-teal-200/50",
   ];
 
   const coreValues = [
@@ -400,26 +442,55 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mainServices.map((svc) => (
-              <Link
-                key={svc.slug}
-                href={`/services/${svc.slug}`}
-                className="liquid-glass liquid-glass-hover p-6 rounded-2xl space-y-4 flex flex-col justify-between group hover:no-underline"
-              >
-                <div className="space-y-3">
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    {svc.name}
-                  </h3>
-                  <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed">
-                    {svc.description}
-                  </p>
-                </div>
-                <div className="text-primary text-xs font-bold flex items-center space-x-1 pt-2">
-                  <span>View Details</span>
-                  <ArrowRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
+            {mainServices.map((svc, i) => {
+              const Icon = svc.icon;
+              return (
+                <motion.div
+                  key={svc.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                >
+                  <Link
+                    href={`/services/${svc.slug}`}
+                    className={`liquid-glass p-6 rounded-2xl !border-2 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 hover:no-underline h-full ${
+                      mainServiceBorders[i % mainServiceBorders.length]
+                    }`}
+                  >
+                    {/* Vibrant color blob at bottom-left corner */}
+                    <div
+                      className={`absolute bottom-[-16px] left-[-16px] w-14 h-14 rounded-full bg-gradient-to-br ${
+                        mainServiceBlobs[i % mainServiceBlobs.length]
+                      } blur-[12px] opacity-40 group-hover:opacity-75 group-hover:scale-125 transition-all duration-500 pointer-events-none z-0`}
+                    />
+
+                    <div className="space-y-4 relative z-10">
+                      <div className="flex items-center justify-between">
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${mainServiceIcons[i % mainServiceIcons.length]}`}>
+                          <Icon className="w-5.5 h-5.5" />
+                        </div>
+                        <span className="text-[10px] text-foreground/45 font-bold uppercase tracking-wider">
+                          Ready-to-Rank
+                        </span>
+                      </div>
+
+                      <h3 className={`text-lg font-bold text-foreground transition-colors ${mainServiceTextHovers[i % mainServiceTextHovers.length]}`}>
+                        {svc.name}
+                      </h3>
+                      <p className="text-foreground/75 text-xs sm:text-sm leading-relaxed">
+                        {svc.description}
+                      </p>
+                    </div>
+
+                    <div className={`text-xs font-bold flex items-center space-x-1 pt-4 border-t border-primary/5 mt-4 relative z-10 text-primary transition-colors ${mainServiceTextHovers[i % mainServiceTextHovers.length]}`}>
+                      <span>View Details</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           <div className="flex justify-center mt-12">
