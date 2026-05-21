@@ -42,6 +42,20 @@ export async function generateMetadata({ params }: PageProps) {
       `${service.name} Udaipur`,
       `${service.name} ${service.locationFocus.split(',')[0].trim()}`
     ],
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      url: `https://futurexdigitalmarketing.com/services/${slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.metaTitle,
+      description: service.metaDescription,
+    }
   };
 }
 
@@ -59,6 +73,8 @@ export default async function ServicePage({ params }: PageProps) {
     "@type": "Service",
     "name": service.name,
     "description": service.metaDescription,
+    "url": `https://futurexdigitalmarketing.com/services/${slug}`,
+    "image": `https://futurexdigitalmarketing.com/images/services/${slug}.jpg`,
     "provider": organizationSchema,
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "United Kingdom" },
@@ -71,6 +87,11 @@ export default async function ServicePage({ params }: PageProps) {
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "Contact for Quote"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48"
     }
   };
 

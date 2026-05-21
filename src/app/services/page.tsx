@@ -11,6 +11,9 @@ export const viewport = {
 export const metadata = {
   title: "Our Services Directory | FutureX Digital Marketing",
   description: "Browse our 12 expert digital marketing services including Web Development, SEO, Meta Ads, Video Editing, Google Ads, SMM, and Graphic Design. Let's scale!",
+  alternates: {
+    canonical: "/services",
+  },
   keywords: [
     "Digital Marketing Services",
     "SEO Optimization Services",

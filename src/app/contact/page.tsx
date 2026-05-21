@@ -10,6 +10,9 @@ export const viewport = {
 export const metadata = {
   title: "Contact Us | FutureX Digital Marketing Udaipur",
   description: "Get in touch with FutureX. Claim your free digital speed and SEO audit. Call +91 77339 77227 or visit us at Arvana Mall, Udaipur, Rajasthan.",
+  alternates: {
+    canonical: "/contact",
+  },
   keywords: [
     "Contact FutureX",
     "Free SEO Audit",

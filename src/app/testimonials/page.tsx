@@ -10,6 +10,9 @@ export const viewport = {
 export const metadata = {
   title: "Client Testimonials & Success Stories | FutureX Digital",
   description: "Read real reviews from global clients in the US, London, Sydney, Dubai, and Udaipur. See how FutureX builds web apps and drives high-ROAS marketing campaigns.",
+  alternates: {
+    canonical: "/testimonials",
+  },
   keywords: [
     "FutureX Testimonials",
     "FutureX Client Reviews",

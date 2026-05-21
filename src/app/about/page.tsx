@@ -21,6 +21,9 @@ export const viewport = {
 export const metadata = {
   title: "About Us | FutureX Digital Marketing Agency",
   description: "Learn about FutureX Digital Marketing. We are a team of expert developers, copywriters, and SEO specialists serving US, UK, UAE, and local Udaipur brands.",
+  alternates: {
+    canonical: "/about",
+  },
   keywords: [
     "About FutureX",
     "FutureX Digital Marketing Team",
