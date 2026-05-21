@@ -76,35 +76,40 @@ export default function Navbar() {
                       <ChevronDown className="w-4 h-4 transition-transform duration-200" />
                     </button>
 
-                    {/* Services Dropdown */}
+                    {/* Services Bubble Mega Menu */}
                     <AnimatePresence>
                       {isDropdownOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 15 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 15 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-2 w-72 rounded-xl border border-primary/10 bg-white/95 backdrop-blur-xl shadow-2xl p-4 grid grid-cols-1 gap-2"
+                          initial={{ opacity: 0, y: 15, x: "-50%" }}
+                          animate={{ opacity: 1, y: 0, x: "-50%" }}
+                          exit={{ opacity: 0, y: 15, x: "-50%" }}
+                          transition={{ duration: 0.25, ease: "easeOut" }}
+                          className="absolute left-1/2 mt-3 w-[620px] rounded-3xl border border-primary/15 bg-white/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(96,45,238,0.12)] p-6 grid grid-cols-2 gap-3 z-50"
                         >
                           <Link
                             href="/services"
-                            className="block px-3 py-2 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
+                            className="col-span-2 text-center py-2.5 px-6 rounded-full bg-gradient-to-r from-primary to-accent-purple text-white text-xs font-bold uppercase tracking-wider hover:from-primary-hover hover:to-accent-purple shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] inline-block mb-2"
                           >
-                            All Services Overview
+                            Explore All Services Overview →
                           </Link>
-                          <hr className="border-primary/10" />
-                          {Object.values(servicesData).map((service) => (
-                            <Link
+                          {Object.values(servicesData).map((service, idx) => (
+                            <motion.div
                               key={service.slug}
-                              href={`/services/${service.slug}`}
-                              className={`block px-3 py-1.5 rounded-lg text-[13.5px] hover:bg-primary/10 transition-colors ${
-                                pathname === `/services/${service.slug}`
-                                  ? "text-primary font-bold bg-primary/5"
-                                  : "text-foreground/80 hover:text-primary"
-                              }`}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.2, delay: idx * 0.02 }}
                             >
-                              {service.name}
-                            </Link>
+                              <Link
+                                href={`/services/${service.slug}`}
+                                className={`w-full h-11 px-4 rounded-full border transition-all duration-300 flex items-center justify-center text-xs font-semibold text-center hover:scale-105 ${
+                                  pathname === `/services/${service.slug}`
+                                    ? "bg-primary text-white border-primary shadow-[0_4px_12px_rgba(96,45,238,0.25)]"
+                                    : "bg-primary/[0.03] border-primary/10 text-foreground/90 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_4px_12px_rgba(96,45,238,0.2)]"
+                                }`}
+                              >
+                                {service.name}
+                              </Link>
+                            </motion.div>
                           ))}
                         </motion.div>
                       )}
@@ -171,25 +176,25 @@ export default function Navbar() {
               {navLinks.map((link) => {
                 if (link.name === "Services") {
                   return (
-                    <div key={link.name} className="space-y-1">
-                      <div className="font-semibold text-primary px-3 py-2 border-b border-primary/10">
+                    <div key={link.name} className="space-y-2">
+                      <div className="font-bold text-primary px-3 py-1 text-sm tracking-wide border-b border-primary/10">
                         Our Services
                       </div>
-                      <div className="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-1 pt-2">
+                      <div className="px-2 flex flex-wrap gap-2 pt-2">
                         <Link
                           href="/services"
-                          className="px-3 py-1.5 rounded-lg text-sm font-bold text-foreground hover:bg-primary/10 transition-colors"
+                          className="px-4 py-2 rounded-full text-xs font-extrabold bg-gradient-to-r from-primary to-accent-purple text-white hover:opacity-90 transition-opacity shadow-sm"
                         >
-                          All Services
+                          All Services Overview
                         </Link>
                         {Object.values(servicesData).map((service) => (
                           <Link
                             key={service.slug}
                             href={`/services/${service.slug}`}
-                            className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
                               pathname === `/services/${service.slug}`
-                                ? "text-primary font-bold bg-primary/5"
-                                : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                                ? "bg-primary text-white border-primary shadow-sm"
+                                : "bg-primary/[0.04] border-primary/10 text-foreground/80 hover:bg-primary hover:text-white"
                             }`}
                           >
                             {service.name}
