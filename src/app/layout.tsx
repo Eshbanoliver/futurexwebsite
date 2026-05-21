@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingElements from "@/components/FloatingElements";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -84,6 +85,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="bg-background text-foreground antialiased min-h-screen flex flex-col justify-between">
+        <ScrollToTop />
         <Navbar />
         <div className="flex-grow">
           {children}
