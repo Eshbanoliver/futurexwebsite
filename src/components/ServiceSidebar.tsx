@@ -135,7 +135,7 @@ export default function ServiceSidebar({ faqs }: ServiceSidebarProps) {
                 </button>
                 <div
                   className={`transition-all duration-300 ease-in-out ${
-                    openFaq === idx ? "max-h-40 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+                    openFaq === idx ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
                   }`}
                 >
                   <p className="px-4 pb-4 pt-1 text-foreground/75 text-xs leading-relaxed border-t border-primary/10">

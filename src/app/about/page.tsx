@@ -96,7 +96,7 @@ export default function About() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-4">
               {["United States Focus", "United Kingdom (London)", "Australia Focus", "UAE (Dubai/Abu Dhabi)", "India (Udaipur Local)", "Canada Market", "Singapore Focus", "Europe Core"].map((region, i) => (
-                <div key={i} className="liquid-glass py-3.5 px-4 rounded-xl border border-primary/10 text-xs sm:text-sm font-semibold">
+                <div key={i} className="liquid-glass py-2.5 px-2 sm:py-3.5 sm:px-4 rounded-xl border border-primary/10 text-[11px] sm:text-xs md:text-sm font-semibold text-center flex items-center justify-center min-h-[50px]">
                   {region}
                 </div>
               ))}

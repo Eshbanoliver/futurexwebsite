@@ -134,7 +134,7 @@ export default function Contact() {
           </div>
 
           {/* Embedded Google Maps Map Iframe */}
-          <div className="w-full h-96 rounded-3xl overflow-hidden border border-primary/10 bg-secondary/35 shadow-2xl relative">
+          <div className="w-full h-64 sm:h-96 rounded-3xl overflow-hidden border border-primary/10 bg-secondary/35 shadow-2xl relative">
             <iframe
               src={mapEmbedUrl}
               className="w-full h-full border-0 grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
