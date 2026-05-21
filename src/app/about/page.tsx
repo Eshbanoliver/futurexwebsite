@@ -1,6 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, GraduationCap, Award, CheckCircle } from "lucide-react";
+import { 
+  ShieldCheck, 
+  GraduationCap, 
+  Award, 
+  CheckCircle, 
+  Zap, 
+  Globe, 
+  TrendingUp, 
+  Sparkles, 
+  ChevronDown, 
+  HelpCircle 
+} from "lucide-react";
 import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
 
 export const metadata = {
@@ -8,51 +19,131 @@ export const metadata = {
   description: "Learn about FutureX Digital Marketing. We are a team of expert developers, copywriters, and SEO specialists serving US, UK, UAE, and local Udaipur brands.",
 };
 
-export default function About() {
-  const eeatValues = [
-    {
-      letter: "E",
-      title: "Experience",
-      desc: "Over 5+ years building software products and driving millions in ad spend across international channels.",
-      icon: Award,
-      bg: "bg-gradient-to-br from-[#6366f1] to-[#3730a3]",
-      shadow: "shadow-[0_15px_30px_rgba(99,102,241,0.15)]",
-    },
-    {
-      letter: "E",
-      title: "Expertise",
-      desc: "Our team consists of Google-certified campaign managers, senior React engineers, and native copywriters.",
-      icon: GraduationCap,
-      bg: "bg-gradient-to-br from-[#10b981] to-[#047857]",
-      shadow: "shadow-[0_15px_30px_rgba(16,185,129,0.15)]",
-    },
-    {
-      letter: "A",
-      title: "Authoritativeness",
-      desc: "Proven keyword ranks, case studies, and published editorial articles on authority marketing forums.",
-      icon: CheckCircle,
-      bg: "bg-gradient-to-br from-[#f59e0b] to-[#c2410c]",
-      shadow: "shadow-[0_15px_30px_rgba(245,158,11,0.15)]",
-    },
-    {
-      letter: "T",
-      title: "Trustworthiness",
-      desc: "We use secure data practices, transparent reporting retainers, and sign strict NDAs before project briefings.",
-      icon: ShieldCheck,
-      bg: "bg-gradient-to-br from-[#ec4899] to-[#a855f7]",
-      shadow: "shadow-[0_15px_30px_rgba(236,72,153,0.15)]",
-    }
-  ];
+const eeatValues = [
+  {
+    letter: "E",
+    title: "Experience",
+    desc: "Over 5+ years building software products and driving millions in ad spend across international channels.",
+    icon: Award,
+    bg: "bg-gradient-to-br from-[#6366f1] to-[#3730a3]",
+    shadow: "shadow-[0_15px_30px_rgba(99,102,241,0.15)]",
+  },
+  {
+    letter: "E",
+    title: "Expertise",
+    desc: "Our team consists of Google-certified campaign managers, senior React engineers, and native copywriters.",
+    icon: GraduationCap,
+    bg: "bg-gradient-to-br from-[#10b981] to-[#047857]",
+    shadow: "shadow-[0_15px_30px_rgba(16,185,129,0.15)]",
+  },
+  {
+    letter: "A",
+    title: "Authoritativeness",
+    desc: "Proven keyword ranks, case studies, and published editorial articles on authority marketing forums.",
+    icon: CheckCircle,
+    bg: "bg-gradient-to-br from-[#f59e0b] to-[#c2410c]",
+    shadow: "shadow-[0_15px_30px_rgba(245,158,11,0.15)]",
+  },
+  {
+    letter: "T",
+    title: "Trustworthiness",
+    desc: "We use secure data practices, transparent reporting retainers, and sign strict NDAs before project briefings.",
+    icon: ShieldCheck,
+    bg: "bg-gradient-to-br from-[#ec4899] to-[#a855f7]",
+    shadow: "shadow-[0_15px_30px_rgba(236,72,153,0.15)]",
+  }
+];
 
+const whyChooseUs = [
+  {
+    title: "Performance-First Tech Stack",
+    desc: "We construct blazing-fast Next.js apps rather than relying on bloated legacy builders. A 1-second load speed means higher Google rankings and better conversion rates.",
+    icon: Zap,
+    colorClass: "from-[#ef4444] to-[#f97316]",
+    borderClass: "!border-red-500/20 hover:!border-red-500/50",
+    textClass: "group-hover:text-red-600",
+    badgeClass: "bg-red-50/80 text-red-600 border-red-200/50"
+  },
+  {
+    title: "Global Reach, Local Scale",
+    desc: "Based in Udaipur, India, but scaling brands internationally in the US, UK, Australia, and UAE. We match localized search intent with high-level international execution.",
+    icon: Globe,
+    colorClass: "from-[#3b82f6] to-[#06b6d4]",
+    borderClass: "!border-blue-500/20 hover:!border-blue-500/50",
+    textClass: "group-hover:text-blue-600",
+    badgeClass: "bg-blue-50/80 text-blue-600 border-blue-200/50"
+  },
+  {
+    title: "Data-Driven ROI Metrics",
+    desc: "No vanity metrics or guesswork. Every keyword optimization and paid ad budget is tracked using live conversion dashboards, ensuring positive return on ad spend.",
+    icon: TrendingUp,
+    colorClass: "from-[#10b981] to-[#059669]",
+    borderClass: "!border-emerald-500/20 hover:!border-emerald-500/50",
+    textClass: "group-hover:text-emerald-600",
+    badgeClass: "bg-emerald-50/80 text-emerald-600 border-emerald-200/50"
+  },
+  {
+    title: "100% Transparent Retainers",
+    desc: "No long-term lock-in retainers. We work on milestone-based deliverables with real-time project reporting, so you always know exactly what you are paying for.",
+    icon: Sparkles,
+    colorClass: "from-[#a855f7] to-[#ec4899]",
+    borderClass: "!border-purple-500/20 hover:!border-purple-500/50",
+    textClass: "group-hover:text-purple-600",
+    badgeClass: "bg-purple-50/80 text-purple-600 border-purple-200/50"
+  }
+];
+
+const faqs = [
+  {
+    question: "What does a digital marketing agency do, and why should we hire one?",
+    answer: "A digital marketing agency helps businesses grow their online presence, attract high-quality leads, and increase sales. By hiring an agency like FutureX, you gain access to a dedicated team of SEO specialists, senior Next.js engineers, and certified Google Ad managers without the overhead of building an in-house team. We handle technical website optimization, search engine visibility, paid ad management, and conversion rate optimization (CRO) to maximize your return on investment."
+  },
+  {
+    question: "How long does it take to see organic rankings and traffic grow with SEO?",
+    answer: "SEO is a long-term strategic investment. Generally, campaigns start demonstrating noticeable improvements in search rankings and organic keyword impressions within 3 to 6 months. Achieving first-page rankings for highly competitive industry keywords typically takes 6 to 12 months. This timeline depends on your website's initial technical health, page loading speed, content depth, backlink authority, and competitor activity."
+  },
+  {
+    question: "Why does website loading speed impact Google search rankings?",
+    answer: "Google uses page speed and user experience metrics, known as Core Web Vitals (LCP, FID, CLS), as direct ranking signals. A slow-loading website frustrates users, leading to higher bounce rates and fewer conversions. At FutureX, we build blazing-fast websites using modern Next.js architecture and light liquid-glass styling, ensuring pages load in under 1 second to improve search engine rankings and increase visitor engagement."
+  },
+  {
+    question: "What is E-E-A-T and why is it important for my website's Google rankings?",
+    answer: "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness. Google uses these quality rater guidelines to assess the credibility of your content. By demonstrating real-world experience, showcasing professional certifications, citing authoritative sources, and maintaining secure site features, you prove to Google that your brand is a trustworthy source of information. This is especially critical for competitive industries like finance, healthcare, and e-commerce."
+  },
+  {
+    question: "Can FutureX handle international SEO campaigns for US, UK, and UAE audiences?",
+    answer: "Yes, we specialize in multi-region international SEO. We configure hreflang tags, set up localized XML sitemaps, optimize content matching native dialects, and deploy content via globally distributed content delivery networks (CDNs). We currently scale search visibility and manage advertising campaigns for clients targeting buyers across the United States, United Kingdom, Australia, India, and the United Arab Emirates."
+  },
+  {
+    question: "How do you track, measure, and report the performance of our marketing campaigns?",
+    answer: "We believe in 100% transparency. We set up comprehensive analytics integrations using Google Analytics 4 (GA4), Google Search Console, and conversion tracking. Clients receive access to live, custom Looker Studio reporting dashboards that index key metrics like organic traffic, keyword positions, lead form submissions, cost-per-click (CPC), and return on ad spend (ROAS) in real-time."
+  }
+];
+
+export const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+export default function About() {
   return (
     <>
       <JsonLd schema={localBusinessSchema} />
+      <JsonLd schema={faqSchema} />
 
       <main className="relative min-h-screen pt-32 pb-20 bg-background text-foreground overflow-hidden">
         {/* Neon decorative glow */}
         <div className="absolute top-1/4 left-[-10%] w-[45%] h-[45%] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="text-sm font-bold uppercase tracking-wider text-primary">Our Story</div>
@@ -125,6 +216,48 @@ export default function About() {
             </div>
           </div>
 
+          {/* Why Choose Us Section */}
+          <div className="space-y-10 pt-8">
+            <div className="text-center space-y-4 max-w-2xl mx-auto">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">The FutureX Advantage</div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Why Brands Choose Us</h2>
+              <p className="text-foreground/75 text-sm sm:text-base leading-relaxed">
+                We replace cookie-cutter strategies with engineering precision, globally scaled campaigns, and complete retainer clarity.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {whyChooseUs.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={i}
+                    className={`group relative overflow-hidden rounded-3xl p-8 liquid-glass transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl ${item.borderClass}`}
+                  >
+                    {/* Card decorative gradient line on left edge */}
+                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${item.colorClass}`} />
+
+                    <div className="flex flex-col sm:flex-row items-start gap-5 relative z-10">
+                      {/* Icon wrapper with capsule theme styling */}
+                      <div className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center border shadow-sm ${item.badgeClass} transition-transform duration-300 group-hover:scale-115`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+
+                      <div className="space-y-2">
+                        <h3 className={`text-xl font-bold tracking-tight transition-colors duration-300 ${item.textClass}`}>
+                          {item.title}
+                        </h3>
+                        <p className="text-foreground/75 leading-relaxed text-sm">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Focus Regions Map Section */}
           <div className="bg-secondary/35 rounded-3xl border border-primary/10 p-8 md:p-12 space-y-6 text-center">
             <h2 className="text-2xl font-bold">Serving Global and Regional Markets</h2>
@@ -136,6 +269,41 @@ export default function About() {
                 <div key={i} className="liquid-glass py-2.5 px-2 sm:py-3.5 sm:px-4 rounded-xl border border-primary/10 text-[11px] sm:text-xs md:text-sm font-semibold text-center flex items-center justify-center min-h-[50px]">
                   {region}
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="space-y-10 pt-8">
+            <div className="text-center space-y-4 max-w-2xl mx-auto">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">Got Questions?</div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">Frequently Asked Questions</h2>
+              <p className="text-foreground/75 text-sm sm:text-base leading-relaxed">
+                Find clear answers to general digital marketing, SEO implementation, and development queries.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-4">
+              {faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group border border-primary/10 rounded-2xl bg-white/50 backdrop-blur-md p-5 sm:p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden hover:border-primary/30"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer focus:outline-none select-none list-none">
+                    <div className="flex items-center gap-3 pr-4">
+                      <HelpCircle className="w-5 h-5 text-primary shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                      <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug tracking-tight">
+                        {faq.question}
+                      </h3>
+                    </div>
+                    <span className="shrink-0 transition-transform duration-300 group-open:rotate-180 bg-secondary/80 rounded-full p-1.5 border border-primary/5">
+                      <ChevronDown className="w-4 h-4 text-primary" />
+                    </span>
+                  </summary>
+                  <div className="mt-4 pl-8 border-t border-primary/5 pt-4 text-foreground/75 text-sm leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
               ))}
             </div>
           </div>
