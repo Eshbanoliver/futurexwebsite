@@ -67,9 +67,9 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Ensure headings default to dark text color in light theme */
+/* Ensure headings default to dark text color in light theme, but inherit custom parent overrides */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--foreground);
+  color: inherit;
 }
 
 /* Scrollbar styling */
@@ -136,6 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, #602dee 0%, #8b5cf6 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 20px rgba(96, 45, 238, 0.3);
+  color: #ffffff !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glow-btn-primary:hover {
