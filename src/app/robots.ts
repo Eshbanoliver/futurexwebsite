@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://futurexdigitalmarketing.com/sitemap.xml",
+    sitemap: "https://futurexdigitalmarketing.in/sitemap.xml",
   };
 }

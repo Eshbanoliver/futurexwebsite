@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://futurexdigitalmarketing.com";
+  const baseUrl = "https://futurexdigitalmarketing.in";
 
   // Static routes
   const staticRoutes = ["", "/about", "/services", "/testimonials", "/contact"].map((route) => ({

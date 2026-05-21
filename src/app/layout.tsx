@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "FutureX Digital Marketing | High-End SEO & Web Development Agency",
   description: "Accelerate your lead funnels. We specialize in custom web applications, video editing, SMM, technical SEO, and paid advertising. Book a free audit!",
-  metadataBase: new URL("https://futurexdigitalmarketing.com"),
+  metadataBase: new URL("https://futurexdigitalmarketing.in"),
   alternates: {
     canonical: "/",
   },
@@ -42,19 +42,19 @@ export const metadata: Metadata = {
     "Paid Advertising Campaign Managers",
     "UI UX App Development Agency"
   ],
-  authors: [{ name: "FutureX Team", url: "https://futurexdigitalmarketing.com" }],
+  authors: [{ name: "FutureX Team", url: "https://futurexdigitalmarketing.in" }],
   creator: "FutureX Digital Marketing",
   publisher: "FutureX Digital Marketing",
   openGraph: {
     title: "FutureX Digital Marketing | High-End SEO & Web Development Agency",
     description: "Accelerate your lead funnels. We specialize in custom web applications, video editing, SMM, technical SEO, and paid advertising. Book a free audit!",
-    url: "https://futurexdigitalmarketing.com",
+    url: "https://futurexdigitalmarketing.in",
     siteName: "FutureX Digital Marketing",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://futurexdigitalmarketing.com/og-image.png",
+        url: "https://futurexdigitalmarketing.in/og-image.png",
         width: 1200,
         height: 630,
         alt: "FutureX Digital Marketing Overview",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "FutureX Digital Marketing | High-End SEO & Web Development Agency",
     description: "Accelerate your lead funnels. We specialize in custom web applications, video editing, SMM, technical SEO, and paid advertising. Book a free audit!",
     creator: "@Futurex2330751",
-    images: ["https://futurexdigitalmarketing.com/og-image.png"],
+    images: ["https://futurexdigitalmarketing.in/og-image.png"],
   },
   robots: {
     index: true,

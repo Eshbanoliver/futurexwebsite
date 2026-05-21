@@ -48,11 +48,11 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,
-      url: `https://futurexdigitalmarketing.com/services/${slug}`,
+      url: `https://futurexdigitalmarketing.in/services/${slug}`,
       type: "article",
       images: [
         {
-          url: "https://futurexdigitalmarketing.com/og-image.png",
+          url: "https://futurexdigitalmarketing.in/og-image.png",
           width: 1200,
           height: 630,
           alt: service.name,
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: PageProps) {
       card: "summary_large_image",
       title: service.metaTitle,
       description: service.metaDescription,
-      images: ["https://futurexdigitalmarketing.com/og-image.png"],
+      images: ["https://futurexdigitalmarketing.in/og-image.png"],
     }
   };
 }
@@ -82,8 +82,8 @@ export default async function ServicePage({ params }: PageProps) {
     "@type": "Service",
     "name": service.name,
     "description": service.metaDescription,
-    "url": `https://futurexdigitalmarketing.com/services/${slug}`,
-    "image": `https://futurexdigitalmarketing.com/images/services/${slug}.jpg`,
+    "url": `https://futurexdigitalmarketing.in/services/${slug}`,
+    "image": `https://futurexdigitalmarketing.in/images/services/${slug}.jpg`,
     "provider": organizationSchema,
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "United Kingdom" },

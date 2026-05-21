@@ -18,8 +18,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "FutureX Digital Marketing",
-  "url": "https://futurexdigitalmarketing.com", // Fallback URL, adjust as needed
-  "logo": "https://futurexdigitalmarketing.com/logo.png",
+  "url": "https://futurexdigitalmarketing.in", // Fallback URL, adjust as needed
+  "logo": "https://futurexdigitalmarketing.in/logo.png",
   "sameAs": [
     "https://www.facebook.com/people/Futurex-DigitalMarketing/61582411168285/",
     "https://www.instagram.com/futurexdigitalmarketing/",
@@ -39,9 +39,9 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "FutureX Digital Marketing",
-  "image": "https://futurexdigitalmarketing.com/office-front.jpg", // Fallback placeholder
-  "@id": "https://futurexdigitalmarketing.com/#localbusiness",
-  "url": "https://futurexdigitalmarketing.com",
+  "image": "https://futurexdigitalmarketing.in/office-front.jpg", // Fallback placeholder
+  "@id": "https://futurexdigitalmarketing.in/#localbusiness",
+  "url": "https://futurexdigitalmarketing.in",
   "telephone": "+917733977227",
   "priceRange": "$$",
   "address": {
