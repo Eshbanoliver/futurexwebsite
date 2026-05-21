@@ -3,9 +3,20 @@ import { Mail, Phone, MapPin, HelpCircle, ChevronDown, CheckCircle } from "lucid
 import ContactForm from "@/components/ContactForm";
 import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
 
+export const viewport = {
+  themeColor: "#602dee",
+};
+
 export const metadata = {
   title: "Contact Us | FutureX Digital Marketing Udaipur",
   description: "Get in touch with FutureX. Claim your free digital speed and SEO audit. Call +91 77339 77227 or visit us at Arvana Mall, Udaipur, Rajasthan.",
+  keywords: [
+    "Contact FutureX",
+    "Free SEO Audit",
+    "Udaipur Marketing Office",
+    "FutureX Digital Phone Number",
+    "Hire Digital Marketing Agency"
+  ],
 };
 
 const preSalesFaqs = [

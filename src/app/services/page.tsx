@@ -4,9 +4,21 @@ import { ArrowRight, Sparkles, CheckCircle } from "lucide-react";
 import { servicesData } from "@/data/services";
 import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
 
+export const viewport = {
+  themeColor: "#602dee",
+};
+
 export const metadata = {
   title: "Our Services Directory | FutureX Digital Marketing",
   description: "Browse our 12 expert digital marketing services including Web Development, SEO, Meta Ads, Video Editing, Google Ads, SMM, and Graphic Design. Let's scale!",
+  keywords: [
+    "Digital Marketing Services",
+    "SEO Optimization Services",
+    "Custom Website Development",
+    "Video Editing Services",
+    "Social Media Management",
+    "PPC Ads Management"
+  ],
 };
 
 export default function Services() {

@@ -14,9 +14,20 @@ import {
 } from "lucide-react";
 import JsonLd, { localBusinessSchema } from "@/components/JsonLd";
 
+export const viewport = {
+  themeColor: "#602dee",
+};
+
 export const metadata = {
   title: "About Us | FutureX Digital Marketing Agency",
   description: "Learn about FutureX Digital Marketing. We are a team of expert developers, copywriters, and SEO specialists serving US, UK, UAE, and local Udaipur brands.",
+  keywords: [
+    "About FutureX",
+    "FutureX Digital Marketing Team",
+    "E-E-A-T SEO Strategy Udaipur",
+    "Technical SEO Experts Udaipur",
+    "Best Digital Marketing Agency Udaipur"
+  ],
 };
 
 const eeatValues = [

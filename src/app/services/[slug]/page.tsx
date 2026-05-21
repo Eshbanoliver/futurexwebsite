@@ -16,6 +16,10 @@ export async function generateStaticParams() {
   return Object.keys(servicesData).map((slug) => ({ slug }));
 }
 
+export const viewport = {
+  themeColor: "#602dee",
+};
+
 // Dynamic Meta Generation based on Next.js 15 Async params
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
@@ -31,6 +35,13 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: service.metaTitle,
     description: service.metaDescription,
+    keywords: [
+      service.name,
+      `${service.name} Services`,
+      `Best ${service.name} Agency`,
+      `${service.name} Udaipur`,
+      `${service.name} ${service.locationFocus.split(',')[0].trim()}`
+    ],
   };
 }
 
