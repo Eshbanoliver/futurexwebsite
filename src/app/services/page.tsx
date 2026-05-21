@@ -26,18 +26,18 @@ export default function Services() {
   ];
 
   const cardBorders = [
-    "border-red-500/20 hover:border-red-500/80 hover:shadow-[0_8px_32px_rgba(239,68,68,0.1)]",
-    "border-blue-500/20 hover:border-blue-500/80 hover:shadow-[0_8px_32px_rgba(59,130,246,0.1)]",
-    "border-emerald-500/20 hover:border-emerald-500/80 hover:shadow-[0_8px_32px_rgba(16,185,129,0.1)]",
-    "border-pink-500/20 hover:border-pink-500/80 hover:shadow-[0_8px_32px_rgba(236,72,153,0.1)]",
-    "border-amber-500/20 hover:border-amber-500/80 hover:shadow-[0_8px_32px_rgba(245,158,11,0.1)]",
-    "border-violet-500/20 hover:border-violet-500/80 hover:shadow-[0_8px_32px_rgba(139,92,246,0.1)]",
-    "border-cyan-500/20 hover:border-cyan-500/80 hover:shadow-[0_8px_32px_rgba(6,182,212,0.1)]",
-    "border-rose-500/20 hover:border-rose-500/80 hover:shadow-[0_8px_32px_rgba(244,63,94,0.1)]",
-    "border-indigo-500/20 hover:border-indigo-500/80 hover:shadow-[0_8px_32px_rgba(99,102,241,0.1)]",
-    "border-orange-500/20 hover:border-orange-500/80 hover:shadow-[0_8px_32px_rgba(249,115,22,0.1)]",
-    "border-fuchsia-500/20 hover:border-fuchsia-500/80 hover:shadow-[0_8px_32px_rgba(168,85,247,0.1)]",
-    "border-teal-500/20 hover:border-teal-500/80 hover:shadow-[0_8px_32px_rgba(20,184,166,0.1)]",
+    "!border-red-500/40 hover:!border-red-500 hover:shadow-[0_8px_32px_rgba(239,68,68,0.12)]",
+    "!border-blue-500/40 hover:!border-blue-500 hover:shadow-[0_8px_32px_rgba(59,130,246,0.12)]",
+    "!border-emerald-500/40 hover:!border-emerald-500 hover:shadow-[0_8px_32px_rgba(16,185,129,0.12)]",
+    "!border-pink-500/40 hover:!border-pink-500 hover:shadow-[0_8px_32px_rgba(236,72,153,0.12)]",
+    "!border-amber-500/40 hover:!border-amber-500 hover:shadow-[0_8px_32px_rgba(245,158,11,0.12)]",
+    "!border-violet-500/40 hover:!border-violet-500 hover:shadow-[0_8px_32px_rgba(139,92,246,0.12)]",
+    "!border-cyan-500/40 hover:!border-cyan-500 hover:shadow-[0_8px_32px_rgba(6,182,212,0.12)]",
+    "!border-rose-500/40 hover:!border-rose-500 hover:shadow-[0_8px_32px_rgba(244,63,94,0.12)]",
+    "!border-indigo-500/40 hover:!border-indigo-500 hover:shadow-[0_8px_32px_rgba(99,102,241,0.12)]",
+    "!border-orange-500/40 hover:!border-orange-500 hover:shadow-[0_8px_32px_rgba(249,115,22,0.12)]",
+    "!border-fuchsia-500/40 hover:!border-fuchsia-500 hover:shadow-[0_8px_32px_rgba(168,85,247,0.12)]",
+    "!border-teal-500/40 hover:!border-teal-500 hover:shadow-[0_8px_32px_rgba(20,184,166,0.12)]",
   ];
 
   const cardBadges = [
@@ -96,7 +96,7 @@ export default function Services() {
             {Object.values(servicesData).map((svc, idx) => (
               <div
                 key={svc.slug}
-                className={`liquid-glass p-6 md:p-8 rounded-2xl border flex flex-col justify-between transition-all duration-300 group relative overflow-hidden ${
+                className={`liquid-glass p-6 md:p-8 rounded-2xl !border-2 flex flex-col justify-between transition-all duration-300 group relative overflow-hidden ${
                   cardBorders[idx % cardBorders.length]
                 }`}
               >
