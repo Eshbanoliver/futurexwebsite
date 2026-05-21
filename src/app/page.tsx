@@ -501,24 +501,69 @@ export default function Home() {
         </section>
 
         {/* CORE VALUES */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-secondary/35 rounded-3xl border border-primary/10 my-12">
-          <div className="text-center space-y-3 mb-12">
-            <h2 className="text-3xl font-extrabold text-foreground">Our Core Values</h2>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 my-16">
+          <div className="text-center space-y-3 mb-16">
+            <div className="text-sm font-bold uppercase tracking-wider text-primary">Our Values</div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">Our Core Values</h2>
             <p className="text-foreground/70 text-sm max-w-md mx-auto">
               Our engineering and marketing ethics keep our clients ranking at the top.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
             {coreValues.map((val, i) => {
-              const Icon = val.icon;
+              const cardStyles = [
+                {
+                  bg: "bg-gradient-to-br from-[#09a8a4] to-[#03726f]",
+                  shadow: "shadow-[0_15px_30px_rgba(9,168,164,0.15)]",
+                },
+                {
+                  bg: "bg-gradient-to-br from-[#f67b34] to-[#c7530c]",
+                  shadow: "shadow-[0_15px_30px_rgba(246,123,52,0.15)]",
+                },
+                {
+                  bg: "bg-gradient-to-br from-[#0cb462] to-[#05763e]",
+                  shadow: "shadow-[0_15px_30px_rgba(12,180,98,0.15)]",
+                },
+                {
+                  bg: "bg-gradient-to-br from-[#be34f4] to-[#8c18bd]",
+                  shadow: "shadow-[0_15px_30px_rgba(190,52,244,0.15)]",
+                }
+              ];
+              const style = cardStyles[i % cardStyles.length];
+              const formattedNum = String(i + 1).padStart(2, '0');
+              
               return (
-                <div key={i} className="space-y-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-primary" />
+                <div
+                  key={i}
+                  className={`relative overflow-hidden rounded-[2rem] p-8 md:p-10 flex flex-col justify-start min-h-[280px] ${style.bg} ${style.shadow} transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}
+                >
+                  {/* Organic curved shape overlays to mimic reference design */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[2rem]">
+                    {/* Top right circle wave */}
+                    <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-white/[0.07] mix-blend-overlay" />
+                    {/* Top right smaller circle accent */}
+                    <div className="absolute -top-4 -right-4 w-28 h-28 rounded-full bg-white/[0.05] mix-blend-overlay" />
+                    {/* Bottom left sweeping wave */}
+                    <div className="absolute -left-16 -bottom-16 w-52 h-52 rounded-full bg-white/[0.06] mix-blend-overlay" />
+                    {/* Bottom left darker depth shape */}
+                    <div className="absolute -left-8 -bottom-8 w-36 h-36 rounded-full bg-black/[0.04] mix-blend-overlay" />
                   </div>
-                  <h4 className="text-foreground font-bold">{val.title}</h4>
-                  <p className="text-foreground/70 text-xs leading-relaxed">{val.desc}</p>
+
+                  {/* Translucent Number in Serif font */}
+                  <div className="absolute top-4 right-6 text-7xl md:text-8xl font-serif font-black text-white/15 select-none pointer-events-none leading-none">
+                    {formattedNum}
+                  </div>
+
+                  {/* Content container */}
+                  <div className="relative z-10 flex flex-col h-full justify-start space-y-4 pt-4">
+                    <h4 className="text-white font-serif text-2xl font-bold tracking-tight pr-12">
+                      {val.title}
+                    </h4>
+                    <p className="text-white/90 text-sm leading-relaxed font-sans font-medium">
+                      {val.desc}
+                    </p>
+                  </div>
                 </div>
               );
             })}
