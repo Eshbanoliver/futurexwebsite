@@ -417,5 +417,42 @@ export const servicesData: Record<string, ServiceData> = {
       }
     ],
     iconName: "MousePointer"
+  },
+  "app-development": {
+    slug: "app-development",
+    name: "App Development",
+    title: "Premium Mobile App Development Services",
+    metaTitle: "Mobile App Development Services US, UK, UAE | FutureX Digital",
+    metaDescription: "Get high-performance iOS and Android mobile applications. We build custom React Native, Flutter, and Swift apps optimized for speed, UX, and conversions.",
+    locationFocus: "US, UK, UAE, Dubai, London, Udaipur",
+    intro: "Scale your business with custom iOS and Android applications. At FutureX, we engineer responsive, high-performance mobile apps built with React Native, Flutter, and native Swift/Kotlin. We turn your product ideas into elegant, secure, and top-rated mobile experiences.",
+    keyPoints: [
+      "Custom iOS & Android development built with React Native & Flutter.",
+      "Stunning UI/UX designs crafted specifically for mobile ergonomics.",
+      "Seamless API integration, backend synchronization, and offline support.",
+      "App Store (iOS) & Google Play Store (Android) launch management.",
+      "High-security standards, user authentication, and secure payment processing."
+    ],
+    whyChooseUs: [
+      "Experienced mobile developers specializing in cross-platform frameworks.",
+      "Aesthetic, liquid glass UI designs that captivate and retain users.",
+      "Full-lifecycle support from wireframing to store optimization (ASO).",
+      "Robust testing across dozens of physical devices to ensure stability."
+    ],
+    faqs: [
+      {
+        question: "Which platforms do you build mobile apps for?",
+        answer: "We build apps for both iOS and Android platforms. We use cross-platform frameworks like React Native and Flutter for cost-effective, high-performance apps, as well as native Swift and Kotlin where required."
+      },
+      {
+        question: "How long does it take to develop a mobile application?",
+        answer: "A standard MVP app takes about 4-6 weeks to design and develop. More complex applications with custom databases, third-party integrations, and advanced features can take 8-12 weeks."
+      },
+      {
+        question: "Do you assist with publishing apps to the App Store and Google Play?",
+        answer: "Yes, we handle the entire deployment process, including preparing metadata, store assets, resolving policy requirements, and submitting the apps for approval."
+      }
+    ],
+    iconName: "Smartphone"
   }
 };

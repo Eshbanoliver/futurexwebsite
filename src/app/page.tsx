@@ -533,7 +533,7 @@ export default function Home() {
 
           <div className="flex justify-center mt-12">
             <Link href="/services" className="glow-btn-secondary px-8 py-3.5 rounded-xl text-sm font-bold text-foreground hover:no-underline">
-              View All 12 Services
+              View All 13 Services
             </Link>
           </div>
         </section>

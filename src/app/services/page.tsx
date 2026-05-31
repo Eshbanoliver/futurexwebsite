@@ -10,7 +10,7 @@ export const viewport = {
 
 export const metadata = {
   title: "Our Services Directory | FutureX Digital Marketing",
-  description: "Browse our 12 expert digital marketing services including Web Development, SEO, Meta Ads, Video Editing, Google Ads, SMM, and Graphic Design. Let's scale!",
+  description: "Browse our 13 expert digital marketing services including Web Development, SEO, Meta Ads, Video Editing, Google Ads, SMM, and Graphic Design. Let's scale!",
   alternates: {
     canonical: "/services",
   },
@@ -102,11 +102,11 @@ export default function Services() {
               High-End Growth Services Built For Speed & Revenue
             </h1>
             <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">
-              We provide 12 specialized services designed to work together, accelerating your marketing pipeline across global hubs in London, New York, Dubai, Sydney, and local sectors.
+              We provide 13 specialized services designed to work together, accelerating your marketing pipeline across global hubs in London, New York, Dubai, Sydney, and local sectors.
             </p>
           </div>
 
-          {/* 12 Services Grid */}
+          {/* 13 Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.values(servicesData).map((svc, idx) => (
               <div

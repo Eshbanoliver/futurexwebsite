@@ -11,7 +11,7 @@ interface PageProps {
   }>;
 }
 
-// Generate Static Params for all 12 services (Build time pre-rendering)
+// Generate Static Params for all 13 services (Build time pre-rendering)
 export async function generateStaticParams() {
   return Object.keys(servicesData).map((slug) => ({ slug }));
 }
